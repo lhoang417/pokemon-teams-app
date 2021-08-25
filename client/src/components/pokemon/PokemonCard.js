@@ -106,7 +106,7 @@ function PokemonCard(props) {
 					{imageLoading ? (
 						<img
 							src={spinner}
-							style={{ width: "60%" }}
+							style={{ width: "40%" }}
 							className="spinner card-img-top rounded mx-auto d-block mt-2"
 							alt=""
 						/>
