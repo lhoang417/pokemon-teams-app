@@ -46,7 +46,7 @@ function Pokemon(props) {
 		const { pokemonIndex } = props.match.params;
 		const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
 		setImageUrl(
-			`https://raw.githubusercontent.com/lhoang417/pokemon-teams-app/main/src/components/pokemon/images/${pokemonIndex}.png?raw=true`
+			`https://raw.githubusercontent.com/lhoang417/pokemon-teams-app/main/client/src/components/pokemon/images/${pokemonIndex}.png?raw=true`
 		);
 		axios.get(pokemonUrl).then((res) => setName(res.data.name));
 
