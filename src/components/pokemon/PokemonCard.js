@@ -54,7 +54,7 @@ function PokemonCard(props) {
 
 	const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
 	// const pokeImgURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
-	const pokeImgURL = `https://raw.githubusercontent.com/lhoang417/Pokemon-Teams/main/src/components/pokemon/images/${pokemonIndex}.png?raw=true`;
+	const pokeImgURL = `https://raw.githubusercontent.com/lhoang417/pokemon-teams-app/main/src/components/pokemon/images/${pokemonIndex}.png?raw=true`;
 
 	useEffect(() => {
 		setName(props.name);
