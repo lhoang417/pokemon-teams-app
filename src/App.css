@@ -299,3 +299,9 @@ h2 {
 		font-size: 1.5em;
 	}
 }
+@media screen and (max-width: 400px) {
+	.span {
+		padding: 1em 21em 0 1em;
+		left: 6vw;
+	}
+}
