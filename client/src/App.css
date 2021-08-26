@@ -6,11 +6,6 @@ nav {
 	user-select: none;
 }
 
-body {
-	max-width: 100vw;
-	max-height: 8000%;
-	overflow: hidden;
-}
 .navbar {
 	display: flex;
 	justify-content: center;
@@ -214,10 +209,11 @@ nav a:hover {
 	height: 80vh;
 	width: 100%;
 	padding: 3em 5.5em 0 5.5em;
-	/* box-shadow: 0em 0em 0.7em; */
-	border-radius: 7px;
-	box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 255, 255),
-		0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+	box-shadow: 0em 0em 0.9em;
+	border-radius: 10px;
+	/* box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 255, 255),
+		0.3em 0.3em 1em rgba(0, 0, 0, 0.3); */
+	background: linear-gradient(135deg, transparent, red, transparent);
 }
 
 .homeDiv h1 {
@@ -526,79 +522,5 @@ h2 {
 	}
 	.card {
 		margin-bottom: 0.5em;
-	}
-}
-
-.ocean {
-	overflow: hidden;
-	width: 100%;
-	position: relative;
-	bottom: 0;
-	left: 0;
-	height: 100vh;
-}
-.wave {
-	background: url("https://aquaworldcruises.com/wp-content/themes/aqua-world-theme/images/wave.svg")
-		repeat-x;
-	position: absolute;
-	bottom: 0px;
-	width: 8080px;
-	height: 198px;
-	-webkit-animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53);
-	animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-@media screen and (max-width: 400px) {
-	.wave {
-		top: -75px;
-		height: 75px;
-	}
-}
-
-@-webkit-keyframes wave {
-	0% {
-		margin-left: 0;
-	}
-
-	100% {
-		margin-left: -1920px;
-	}
-}
-
-@keyframes wave {
-	0% {
-		margin-left: 0;
-	}
-
-	100% {
-		margin-left: -1920px;
-	}
-}
-
-@-webkit-keyframes swell {
-	0%,
-	100% {
-		-webkit-transform: translate3d(0, -25px, 0);
-		transform: translate3d(0, -25px, 0);
-	}
-
-	50% {
-		-webkit-transform: translate3d(0, 5px, 0);
-		transform: translate3d(0, 5px, 0);
-	}
-}
-
-@keyframes swell {
-	0%,
-	100% {
-		-webkit-transform: translate3d(0, -25px, 0);
-		transform: translate3d(0, -25px, 0);
-	}
-
-	50% {
-		-webkit-transform: translate3d(0, 5px, 0);
-		transform: translate3d(0, 5px, 0);
 	}
 }

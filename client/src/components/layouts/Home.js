@@ -22,8 +22,6 @@ function Home() {
 					</Link>
 				</div>
 			</div>
-			<div className="ocean"></div>
-			<div className="wave"></div>
 		</div>
 	);
 }
