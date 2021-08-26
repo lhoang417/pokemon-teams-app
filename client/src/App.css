@@ -1,13 +1,15 @@
-body {
-	overflow: hidden;
-}
-
 nav {
 	background-color: black;
 	box-shadow: -0.1rem 0.5rem 0.7rem;
 }
 * {
 	user-select: none;
+}
+
+body {
+	max-width: 100vw;
+	max-height: 8000%;
+	overflow: hidden;
 }
 .navbar {
 	display: flex;
