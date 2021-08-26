@@ -16,7 +16,7 @@ function Home() {
 				<div className="homeLinkDiv">
 					<Link
 						className="linkTag navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
-						to={"/Dashboard"}
+						to="/Dashboard"
 					>
 						<h1>Pokemon</h1>
 					</Link>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 // import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 
 const Sprite = styled.img`
 	width: 30%;
@@ -82,49 +83,58 @@ function Pokemon(props) {
 	// 	}
 	// };
 	return (
-		<div
-			className="pokeDiv"
-			style={{ background: TYPE_COLORS[type.replace(/"/g, "")] }}
-		>
-			{/* <div className="team">
+		<>
+			<div
+				className="pokeDiv"
+				style={{ background: TYPE_COLORS[type.replace(/"/g, "")] }}
+			>
+				{/* <div className="team">
 				<h5>Team: {pokemonTeam.length} added</h5>
 			</div> */}
 
-			<div className="imgDiv">
-				<Sprite
-					className="imgCard card-img-top rounded mx-auto"
-					src={imageUrl}
-				/>
-				<div className="nameDiv">
-					<h4>
-						{name
-							.toLowerCase()
-							.split(" ")
-							.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-							.join(" ")}
-						&nbsp;
-					</h4>
-				</div>
-				{/* <button className="addPokemonBtn" onClick={addToTeam}>
+				<div className="imgDiv">
+					<Sprite
+						className="imgCard card-img-top rounded mx-auto"
+						src={imageUrl}
+					/>
+					<div className="nameDiv">
+						<h4>
+							{name
+								.toLowerCase()
+								.split(" ")
+								.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+								.join(" ")}
+							&nbsp;
+						</h4>
+					</div>
+					{/* <button className="addPokemonBtn" onClick={addToTeam}>
 					Add to Team
 				</button> */}
-			</div>
+				</div>
 
-			<div className="baseStatsDiv">
-				<h1>BASE STATS</h1>
-				<h2>HP: {hp}</h2>
-				<h2>Attack: {attack}</h2>
-				<h2>Defense: {defense}</h2>
-				<h2>Special Attack: {specialAttack}</h2>
-				<h2>Special Defense: {specialDefense}</h2>
-				<h2>Speed: {speed}</h2>
-				<h1>
-					TYPE: <br />
-					{type.replace(/"/g, "").toUpperCase()}
-				</h1>
-				{/* <h1>Total Base Stats: {}</h1> */}
+				<div className="baseStatsDiv">
+					<h1>BASE STATS</h1>
+					<h2>HP: {hp}</h2>
+					<h2>Attack: {attack}</h2>
+					<h2>Defense: {defense}</h2>
+					<h2>Special Attack: {specialAttack}</h2>
+					<h2>Special Defense: {specialDefense}</h2>
+					<h2>Speed: {speed}</h2>
+					<h1>
+						TYPE: <br />
+						{type.replace(/"/g, "").toUpperCase()}
+					</h1>
+					{/* <h1>Total Base Stats: {}</h1> */}
+				</div>
 			</div>
-		</div>
+			<Link
+				className="backToList navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
+				to="/Dashboard"
+				style={{ zIndex: "1000" }}
+			>
+				<h3>{"<"} Back</h3>
+			</Link>
+		</>
 	);
 }
 
