@@ -1,6 +1,5 @@
 import React from "react";
 // import pokeball from "./pokeball.png";
-// import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
@@ -12,12 +11,6 @@ function Navbar() {
 				>
 					Home
 				</a>
-				{/* <Link
-					className="linkTag navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
-					to={"/PokemonTeam"}
-				>
-					Team
-				</Link> */}
 			</nav>
 		</div>
 	);
