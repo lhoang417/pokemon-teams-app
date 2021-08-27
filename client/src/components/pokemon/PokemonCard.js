@@ -3,6 +3,7 @@ import styled from "styled-components";
 import spinner from "../pokemon/spinner.gif";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useEasybase } from "easybase-react";
 
 const Sprite = styled.img`
 	width: 50%;
@@ -47,10 +48,17 @@ function PokemonCard(props) {
 	const [imageUrl, setImageUrl] = useState("");
 	const [pokemonIndex, setPokemonIndex] = useState("");
 	const [pokemonTeam, setPokemonTeam] = useState([]);
-
+	const [pokemon, setPokemon] = useState([]);
+	const { db } = useEasybase();
 	const [imageLoading, setImageLoading] = useState(true);
 	const [tooManyRequests, setTooManyRequests] = useState(false);
 	const [type, setType] = useState("");
+	const [hp, setHp] = useState([]);
+	const [attack, setAttack] = useState([]);
+	const [defense, setDefense] = useState([]);
+	const [specialAttack, setSpecialAttack] = useState([]);
+	const [specialDefense, setSpecialDefense] = useState([]);
+	const [speed, setSpeed] = useState([]);
 
 	const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
 	// const pokeImgURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
@@ -61,7 +69,15 @@ function PokemonCard(props) {
 		setPokemonIndex(props.url.split("/")[6]);
 		setImageUrl(pokeImgURL);
 		setPokemonTeam(pokemonTeam);
-		axios.get(pokemonUrl).then((res) => setType(res.data.types[0].type.name));
+		axios.get(pokemonUrl).then((res) => {
+			setType(res.data.types[0].type.name);
+			setHp(res.data.stats[0].base_stat);
+			setAttack(res.data.stats[1].base_stat);
+			setDefense(res.data.stats[2].base_stat);
+			setSpecialAttack(res.data.stats[3].base_stat);
+			setSpecialDefense(res.data.stats[4].base_stat);
+			setSpeed(res.data.stats[5].base_stat);
+		});
 		// fetch(pokemonUrl)
 		// 	.then((response) => response.json())
 		// 	.then(function (allpokemon) {
@@ -94,6 +110,28 @@ function PokemonCard(props) {
 	// 		setPokemonTeam(team);
 	// 	}
 	// };
+	const addToTeam = (pokemon) => {
+		if (pokemonTeam.length >= 6) {
+			alert("Your team is full!");
+			console.log(pokemonTeam);
+		} else {
+			setPokemonTeam([...pokemonTeam, pokemon]);
+			db("POKEMON")
+				.insert({
+					Id: pokemonIndex,
+					Name: name,
+					Hp: hp,
+					Attack: attack,
+					Defense: defense,
+					SpecialAttack: specialAttack,
+					SpecialDefense: specialDefense,
+					Speed: speed,
+					Type: type,
+					Image: imageUrl,
+				})
+				.one();
+		}
+	};
 
 	return (
 		<div>
@@ -140,6 +178,14 @@ function PokemonCard(props) {
 					</div>
 				</div>
 			</StyledLink>
+			<button
+				className="addPokemonBtn"
+				value={name}
+				onMouseOver={(e) => setPokemon(e.target.value)}
+				onClick={() => addToTeam(pokemon)}
+			>
+				Add to Team
+			</button>
 		</div>
 	);
 }

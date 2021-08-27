@@ -10,7 +10,8 @@ function Home() {
 				<h1>
 					Welcome to Pokemon Teams!
 					<br />
-					Click on the link below to view all pokemon.
+					Click on the link below to view all pokemon <br /> and select your
+					team.
 					<br />
 				</h1>
 				<div className="homeLinkDiv">

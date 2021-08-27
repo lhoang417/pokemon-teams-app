@@ -3,15 +3,14 @@ import { Form, Button } from "react-bootstrap";
 import { useEasybase } from "easybase-react";
 
 function Account() {
-	const [email, setEmail] = useState("");
+	const [trainer, setTrainer] = useState("");
 	const [password, setPassword] = useState("");
 	const [success, setSuccess] = useState("");
+	const [loggedInUser, setLoggedInUser] = useState("");
 
 	function validateForm() {
 		return (
-			email.match(
-				/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
-			) &&
+			trainer.length > 0 &&
 			password.match(
 				/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
 			)
@@ -25,24 +24,26 @@ function Account() {
 	const { signIn, signUp } = useEasybase();
 
 	const clearInputs = () => {
-		setEmail("");
+		setTrainer("");
 		setPassword("");
 	};
 
 	const handleLogInPress = async () => {
-		await signIn(email, password);
+		await signIn(trainer, password);
+
 		clearInputs();
 	};
 
 	const handleSignUpPress = async () => {
-		await signUp(email, password, {
+		await signUp(trainer, password, {
 			created_at: new Date().toString,
 		});
 		// if (res.success) {
 		// 	await signIn(email, password);
 		// }
+		setLoggedInUser(trainer);
 		clearInputs();
-		setSuccess("Sign up sucessful, please sign in to access the App");
+		setSuccess(`Sign up sucessful, please sign in with New Trainer Name:`);
 	};
 
 	return (
@@ -54,13 +55,13 @@ function Account() {
 			</div>
 			<div className="Login">
 				<Form onSubmit={handleSubmit}>
-					<Form.Group className="inputForForm" size="lg" controlId="email">
-						<Form.Label>Email</Form.Label>
+					<Form.Group className="inputForForm" size="lg" controlId="Trainer">
+						<Form.Label>Trainer Name</Form.Label>
 						<Form.Control
 							autoFocus
-							type="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							type="text"
+							value={trainer}
+							onChange={(e) => setTrainer(e.target.value)}
 						/>
 					</Form.Group>
 					<Form.Group className="inputForForm2" size="lg" controlId="password">
@@ -103,7 +104,10 @@ function Account() {
 							Login
 						</Button>
 					</div>
-					<h1 className="successH1">{success}</h1>
+					<h1 className="successH1">
+						{success}
+						{loggedInUser}
+					</h1>
 				</Form>
 			</div>
 		</div>

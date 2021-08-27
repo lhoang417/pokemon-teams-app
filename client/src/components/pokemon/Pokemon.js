@@ -124,7 +124,6 @@ function Pokemon(props) {
 						TYPE: <br />
 						{type.replace(/"/g, "").toUpperCase()}
 					</h1>
-					{/* <h1>Total Base Stats: {}</h1> */}
 				</div>
 			</div>
 			<Link

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import styled from "styled-components";
+import { useEasybase } from "easybase-react";
+import PokemonTeam from "./PokemonTeam";
 
 const StyledLink = styled(Link)`
 	color: white;
@@ -21,28 +23,28 @@ const StyledLink = styled(Link)`
 function PokemonList() {
 	const url = "https://pokeapi.co/api/v2/pokemon?limit=151/";
 	const [pokemon, setPokemon] = useState([]);
-	const [pokemonName, setPokemonName] = useState("");
-	const [pokemonTeam, setPokemonTeam] = useState([]);
+	// const [pokemonName, setPokemonName] = useState("");
 	const [text, setText] = useState("");
+	// const { db } = useEasybase();
+	// const [pokemonTeam, setPokemonTeam] = useState([]);
 
 	useEffect(() => {
 		axios.get(url).then((res) => setPokemon(res.data["results"]));
 	}, []);
 
-	const addToTeam = (pokemonName) => {
-		if (pokemonTeam.length >= 6) {
-			alert("Your team is full!");
-			console.log(pokemonTeam);
-		} else {
-			// const team = pokemonTeam.concat({ name: pokemonName });
-			// console.log(team);
-			// console.log(pokemon);
-			// console.log(pokemonName);
-
-			// console.log(pokemonTeam);
-			setPokemonTeam([...pokemonTeam, pokemonName]);
-		}
-	};
+	// const addToTeam = (pokemonName) => {
+	// 	if (pokemonTeam.length >= 6) {
+	// 		alert("Your team is full!");
+	// 		console.log(pokemonTeam);
+	// 	} else {
+	// 		setPokemonTeam([...pokemonTeam, pokemonName]);
+	// 		db("POKEMON")
+	// 			.insert({
+	// 				name: pokemonName,
+	// 			})
+	// 			.one();
+	// 	}
+	// };
 
 	return (
 		<div className="listDiv">
@@ -55,12 +57,11 @@ function PokemonList() {
 				}}
 			></input>
 			<div className="team">
-				{/* <h5>Team: </h5> */}
 				<StyledLink to={"/PokemonTeam"}>
 					<div className="span">
-						{pokemonTeam.map((p) => (
-							<span>{p}</span>
-						))}
+						<div className="divInDiv">
+							<PokemonTeam />
+						</div>
 					</div>
 				</StyledLink>
 			</div>
@@ -81,14 +82,14 @@ function PokemonList() {
 									name={pokemon.name}
 									url={pokemon.url}
 								/>
-								<button
+								{/* <button
 									className="addPokemonBtn"
 									value={pokemon.name}
 									onMouseOver={(e) => setPokemonName(e.target.value)}
 									onClick={() => addToTeam(pokemonName)}
 								>
 									Add to Team
-								</button>
+								</button> */}
 							</div>
 						))}
 				</div>
