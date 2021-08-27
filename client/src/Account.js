@@ -54,7 +54,7 @@ function Account() {
 			</div>
 			<div className="Login">
 				<Form onSubmit={handleSubmit}>
-					<Form.Group size="lg" controlId="email">
+					<Form.Group className="inputForForm" size="lg" controlId="email">
 						<Form.Label>Email</Form.Label>
 						<Form.Control
 							autoFocus
@@ -63,7 +63,7 @@ function Account() {
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</Form.Group>
-					<Form.Group size="lg" controlId="password">
+					<Form.Group className="inputForForm2" size="lg" controlId="password">
 						<Form.Label style={{ paddingTop: ".5em" }}>
 							Password
 							<h5 className="pwDesc">
@@ -78,7 +78,10 @@ function Account() {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</Form.Group>
-					<div style={{ display: "flex", margin: ".2rem" }}>
+					<div
+						className="logButtonDiv"
+						style={{ display: "flex", margin: ".2rem" }}
+					>
 						<Button
 							onClick={handleSignUpPress}
 							className="logInBtn"

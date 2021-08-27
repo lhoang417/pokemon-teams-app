@@ -507,6 +507,25 @@ h2 {
 	.linkTag h1 {
 		font-size: 2em;
 	}
+	.welcome span {
+		color: white;
+		background: black;
+	}
+	.welcome h1 {
+		font-size: 1.3em;
+	}
+	.inputForForm {
+		margin-left: 2em;
+		margin-right: 2em;
+	}
+	.inputForForm2 {
+		margin-left: 2em;
+		margin-right: 2em;
+	}
+	.logButtonDiv {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
 .imgDiv {
@@ -535,5 +554,29 @@ h2 {
 	}
 	.card {
 		margin-bottom: 0.5em;
+	}
+	.welcome span {
+		color: white;
+		background: black;
+	}
+	.welcome h1 {
+		font-size: 1.3em;
+	}
+	.inputForForm {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	.inputForForm2 {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	.logButtonDiv {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+@media screen and (max-width: 530px) {
+	.welcome h1 {
+		font-size: 1.3em;
 	}
 }
