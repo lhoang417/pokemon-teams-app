@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import { useEasybase } from "easybase-react";
-import PokemonTeam from "./PokemonTeam";
+// import PokemonTeam from "./PokemonTeam";
+import pokeball from "../layouts/pokeball.png";
 
 const StyledLink = styled(Link)`
 	color: white;
@@ -25,7 +26,8 @@ function PokemonList() {
 	const [pokemon, setPokemon] = useState([]);
 	// const [pokemonName, setPokemonName] = useState("");
 	const [text, setText] = useState("");
-	// const { db } = useEasybase();
+	const { db, useReturn } = useEasybase();
+	const { frame } = useReturn(() => db("POKEMON").return().limit(6), []);
 	// const [pokemonTeam, setPokemonTeam] = useState([]);
 
 	useEffect(() => {
@@ -59,8 +61,13 @@ function PokemonList() {
 			<div className="team">
 				<StyledLink to={"/PokemonTeam"}>
 					<div className="span">
+						<h3>Team:</h3>
 						<div className="divInDiv">
-							<PokemonTeam />
+							{frame.map((ele, i) => (
+								<div key={i}>
+									<img src={pokeball} alt="" style={{ width: "80%" }} />
+								</div>
+							))}
 						</div>
 					</div>
 				</StyledLink>
@@ -75,13 +82,9 @@ function PokemonList() {
 								return val;
 							}
 						})
-						.map((pokemon) => (
-							<div className="col-md-4 col-sm-6 mb-4 pokeBlock">
-								<PokemonCard
-									key={pokemon.name}
-									name={pokemon.name}
-									url={pokemon.url}
-								/>
+						.map((pokemon, index) => (
+							<div key={index} className="col-md-4 col-sm-6 mb-4 pokeBlock">
+								<PokemonCard name={pokemon.name} url={pokemon.url} />
 								{/* <button
 									className="addPokemonBtn"
 									value={pokemon.name}

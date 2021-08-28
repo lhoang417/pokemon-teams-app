@@ -88,10 +88,6 @@ function Pokemon(props) {
 				className="pokeDiv"
 				style={{ background: TYPE_COLORS[type.replace(/"/g, "")] }}
 			>
-				{/* <div className="team">
-				<h5>Team: {pokemonTeam.length} added</h5>
-			</div> */}
-
 				<div className="imgDiv">
 					<Sprite
 						className="imgCard card-img-top rounded mx-auto"
@@ -107,9 +103,6 @@ function Pokemon(props) {
 							&nbsp;
 						</h4>
 					</div>
-					{/* <button className="addPokemonBtn" onClick={addToTeam}>
-					Add to Team
-				</button> */}
 				</div>
 
 				<div className="baseStatsDiv">
@@ -131,7 +124,10 @@ function Pokemon(props) {
 				to="/Dashboard"
 				style={{ zIndex: "1000" }}
 			>
-				<h3>{"<"} Back</h3>
+				<h3>{"<"} PokemonList</h3>
+			</Link>
+			<Link className="backToTeam" to={"/PokemonTeam"}>
+				<h4>{"<"} Team</h4>
 			</Link>
 		</>
 	);

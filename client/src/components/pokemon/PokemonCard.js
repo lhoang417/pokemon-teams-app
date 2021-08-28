@@ -47,9 +47,9 @@ function PokemonCard(props) {
 	const [name, setName] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
 	const [pokemonIndex, setPokemonIndex] = useState("");
-	const [pokemonTeam, setPokemonTeam] = useState([]);
 	const [pokemon, setPokemon] = useState([]);
-	const { db } = useEasybase();
+	const { db, useReturn } = useEasybase();
+	const [pokemonTeam, setPokemonTeam] = useState([]);
 	const [imageLoading, setImageLoading] = useState(true);
 	const [tooManyRequests, setTooManyRequests] = useState(false);
 	const [type, setType] = useState("");
@@ -59,6 +59,7 @@ function PokemonCard(props) {
 	const [specialAttack, setSpecialAttack] = useState([]);
 	const [specialDefense, setSpecialDefense] = useState([]);
 	const [speed, setSpeed] = useState([]);
+	const { frame } = useReturn(() => db("POKEMON", true).return().limit(10), []);
 
 	const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
 	// const pokeImgURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
@@ -101,22 +102,12 @@ function PokemonCard(props) {
 		pokemonTeam,
 	]);
 
-	// const addToTeam = () => {
-	// 	if (pokemonTeam.length >= 6) {
-	// 		alert("Your party is full!");
-	// 	} else {
-	// 		const team = pokemonTeam.concat(pokemonIndex);
-	// 		console.log(team);
-	// 		setPokemonTeam(team);
-	// 	}
-	// };
-	const addToTeam = (pokemon) => {
-		if (pokemonTeam.length >= 6) {
+	const addToTeam = () => {
+		if (frame.length >= 6) {
 			alert("Your team is full!");
-			console.log(pokemonTeam);
 		} else {
 			setPokemonTeam([...pokemonTeam, pokemon]);
-			db("POKEMON")
+			db("POKEMON", true)
 				.insert({
 					Id: pokemonIndex,
 					Name: name,
@@ -135,6 +126,7 @@ function PokemonCard(props) {
 
 	return (
 		<div>
+			{/* <button onClick={() => console.log(frame)}>push</button> */}
 			<StyledLink to={`pokemon/${pokemonIndex}`}>
 				<div
 					className="card"

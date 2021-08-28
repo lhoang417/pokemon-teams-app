@@ -37,11 +37,13 @@ function Account() {
 	const handleSignUpPress = async () => {
 		await signUp(trainer, password, {
 			created_at: new Date().toString,
+			username: trainer,
 		});
 		// if (res.success) {
 		// 	await signIn(email, password);
 		// }
 		setLoggedInUser(trainer);
+
 		clearInputs();
 		setSuccess(`Sign up sucessful, please sign in with New Trainer Name:`);
 	};

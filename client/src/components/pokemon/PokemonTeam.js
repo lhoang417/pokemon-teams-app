@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEasybase } from "easybase-react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
 // import { useEffect, useState } from "react";
 // import PokemonCard from "./PokemonCard";
 const TYPE_COLORS = {
@@ -23,65 +26,105 @@ const TYPE_COLORS = {
 	poison: "linear-gradient(black, #934594)",
 };
 
+const StyledLink = styled(Link)`
+	overflow: hidden;
+	text-decoration: none;
+	user-select: none;
+	&:focus,
+	&:hover,
+	&:visited,
+	&:link,
+	&:active {
+		text-decoration: none;
+		user-select: none;
+	}
+`;
+
 function PokemonTeam() {
 	// const [easybaseData, setEasybaseData] = useState([]);
 	const { db, useReturn } = useEasybase();
+	const [nameToDelete, setNameToDelete] = useState("");
 
 	// const {mounted} = async () => {
-	const { frame } = useReturn(() => db("POKEMON").return().limit(10), []);
+	const { frame } = useReturn(() => db("POKEMON").return().limit(6), []);
 	// setEasybaseData(ebData);
 
 	// useEffect(() => {
 	// 	mounted();
 	// });
+	const handleDelete = async (e) => {
+		await db("POKEMON", true).delete().where({ name: nameToDelete }).one();
+	};
 
 	return (
-		<div
-			className="pokemonTeamDiv"
-			style={{
-				display: "flex",
+		<>
+			<div
+				className="pokemonTeamDiv container"
+				style={{
+					color: "white",
+					width: "100vw",
+				}}
+			>
+				<div className="row justify-content-center">
+					{frame.map((ele, i) => (
+						<div
+							key={i}
+							className="card card2 col-lg-3 col-md-4 col-sm-6 mt-3"
+							style={{ background: TYPE_COLORS[ele.type.replace(/"/g, "")] }}
+						>
+							<StyledLink to={`pokemon/${ele.id}`}>
+								<div>
+									<h5 className="card-header">{ele.id}</h5>
+									<img
+										className="imgCard card-img-top rounded mx-auto mt-1"
+										src={ele.image}
+										alt=""
+									/>
+									<div className="card-body mx-auto">
+										<h6 className="card-title">
+											{ele.name
+												.toLowerCase()
+												.split(" ")
+												.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+												.join(" ")}
+										</h6>
+									</div>
 
-				color: "white",
-			}}
-		>
-			{frame.map((ele, i) => (
-				<div
-					key={i}
-					className="card"
-					style={{ background: TYPE_COLORS[ele.type.replace(/"/g, "")] }}
-				>
-					<h5 className="card-header">{ele.id}</h5>
-					<img
-						className="imgCard card-img-top rounded mx-auto mt-2"
-						src={ele.image}
-						alt=""
-					/>
-					<div className="card-body mx-auto">
-						<h6 className="card-title">
-							{ele.name
-								.toLowerCase()
-								.split(" ")
-								.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-								.join(" ")}
-						</h6>
-					</div>
-					{/* {console.log(ele)} */}
-					<div className="baseStatsDiv">
-						<h1>BASE STATS</h1>
-						<h2>HP: {ele.hp}</h2>
-						<h2>Attack: {ele.attack}</h2>
-						<h2>Defense: {ele.defense}</h2>
-						<h2>Special Attack: {ele.specialattack}</h2>
-						<h2>Special Defense: {ele.specialdefense}</h2>
-						<h2>Speed: {ele.speed}</h2>
-						<h1>
-							TYPE: <br />
-							{ele.type.replace(/"/g, "").toUpperCase()}
-						</h1>
-					</div>
+									{/* <div className="baseStatsDiv">
+							<h1>BASE STATS</h1>
+							<h2>HP: {ele.hp}</h2>
+							<h2>Attack: {ele.attack}</h2>
+							<h2>Defense: {ele.defense}</h2>
+							<h2>Special Attack: {ele.specialattack}</h2>
+							<h2>Special Defense: {ele.specialdefense}</h2>
+							<h2>Speed: {ele.speed}</h2>
+							<h1>TYPE </h1>
+							<br />
+							<h2 style={{ marginTop: "-1em" }}>
+								{ele.type.replace(/"/g, "").toUpperCase()}
+							</h2>
+						</div> */}
+								</div>
+							</StyledLink>
+							<button
+								className="deleteBtn"
+								onMouseOver={(e) => {
+									setNameToDelete(ele.name);
+									console.log(nameToDelete);
+								}}
+								onClick={(e) => handleDelete(e.target.value)}
+							>
+								Delete
+							</button>
+						</div>
+					))}
 				</div>
-			))}
-		</div>
+			</div>
+
+			<Link className="backToList2" to="/Dashboard">
+				<h3>{"<"} PokemonList</h3>
+			</Link>
+		</>
 	);
 }
 

@@ -13,7 +13,7 @@ import Pokemon from "./components/pokemon/Pokemon";
 import Home from "./components/layouts/Home";
 
 function LogIn() {
-	const { isUserSignedIn, signOut } = useEasybase();
+	const { isUserSignedIn, signOut, userID } = useEasybase();
 
 	return isUserSignedIn() ? (
 		<div>
@@ -29,9 +29,12 @@ function LogIn() {
 						</Switch>
 					</div>
 				</div>
-				<button className="logOutBtn" onClick={signOut}>
-					Log Out
-				</button>
+				<div className="userInfo">
+					<h5>{userID()}</h5>
+					<button className="logOutBtn" onClick={signOut}>
+						Log Out
+					</button>
+				</div>
 			</Router>
 		</div>
 	) : (

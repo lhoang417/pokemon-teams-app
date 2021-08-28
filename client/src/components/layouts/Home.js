@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { useEasybase } from "easybase-react";
+import { useEasybase } from "easybase-react";
 
 function Home() {
-	// const { getUserAttribrutes } = useEasybase();
+	const { userID } = useEasybase();
 	return (
 		<div className="homeDiv">
 			<div className="homeHeading">
-				<h1>
+				<span className="dashUserSpan">{userID()}</span>
+				<h1 className="welcomeH1">
 					Welcome to Pokemon Teams!
 					<br />
-					Click on the link below to view all pokemon <br /> and select your
-					team.
+					Click on the link below to view all pokemon. <br />
+					Select your team... <br />
+					FINALLY BATTLE THE GYM LEADERS!
 					<br />
 				</h1>
 				<div className="homeLinkDiv">

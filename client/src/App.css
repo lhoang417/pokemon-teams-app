@@ -4,7 +4,9 @@ nav {
 }
 * {
 	user-select: none;
+	font-family: "Poppins";
 }
+
 .container {
 	padding-bottom: 5em;
 }
@@ -17,10 +19,6 @@ nav {
 }
 .nameDiv {
 	margin-bottom: 1em;
-}
-
-* {
-	font-family: "Poppins";
 }
 
 nav a {
@@ -36,10 +34,11 @@ nav a {
 	border: 2px rgb(black);
 	border-radius: 7px;
 	transition: 500ms;
+	transform: scale(1.3);
 }
 
 nav a:hover {
-	transform: scale(1.1);
+	transform: scale(1.4);
 	background: linear-gradient(130deg, red, blue);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -50,6 +49,10 @@ nav a:hover {
 	min-height: 100vh;
 	/* background-color: rgba(0, 0, 0, 0.74); */
 	background: black;
+	overflow: hidden;
+}
+.card2 {
+	margin: 0 0.5em;
 }
 
 .spinner {
@@ -102,43 +105,31 @@ nav a:hover {
 	padding-right: 1em;
 }
 .pokemonTeamDiv {
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
 	transform: scale(0.8);
 	text-align: center;
 	margin-top: -5em;
+	max-height: 70vh;
 }
 
 .span {
-	/* display: grid; */
 	display: flex;
-	height: 2.9em;
-	width: 22em;
-	padding-left: 1em;
-	right: 10vw;
-	/* grid-template-columns: repeat(3, 6.7em [col-start]);
-	grid-template-rows: repeat(3, 1.4em [row-start]); */
+	justify-content: center;
 	opacity: 0.2;
 	transition: 750ms;
 	box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 255, 255),
 		0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 	background: linear-gradient(transparent, black);
-	/* background: linear-gradient(
-		130deg,
-		rgb(213, 226, 24),
-		rgb(243, 10, 10),
-		rgb(51, 134, 243)
-	); */
-	/* -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent; */
-	border-radius: 7px;
-	font-style: italic;
+	border-radius: 5px;
+	padding-left: 0.5em;
 }
 .divInDiv {
 	display: flex;
-	/* height: 1em; */
+	padding-left: 1em;
+	padding-top: 0.3em;
 	width: 100%;
-	transform: scale(0.5);
-	margin-left: -12em;
-	opacity: 0.4;
 }
 
 .span:hover {
@@ -161,7 +152,7 @@ nav a:hover {
 	font-size: 0.5em;
 	font-style: italic;
 	z-index: 2000;
-	transition: 1.2s;
+	transition: 200ms;
 }
 
 .addPokemonBtn:hover {
@@ -216,6 +207,13 @@ nav a:hover {
 		0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
+.dashUserSpan {
+	font-size: 4.5em;
+	background: linear-gradient(130deg, gold, white, gold);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .homeDiv {
 	display: flex;
 	justify-content: center;
@@ -223,6 +221,7 @@ nav a:hover {
 	text-align: center;
 	align-items: center;
 	margin-top: 2%;
+	margin-bottom: -2em;
 	color: white;
 	height: 80vh;
 	width: 100%;
@@ -233,22 +232,81 @@ nav a:hover {
 		0.3em 0.3em 1em rgba(0, 0, 0, 0.3); */
 	background: linear-gradient(135deg, transparent, red, transparent);
 }
+.homeHeading {
+	margin-top: -2em;
+}
+
 .backToList,
 .backToList h3 {
-	position: relative;
+	position: fixed;
 	color: white;
-	margin-top: -2.5em;
-	margin-left: 0.5em;
+	top: 1.3vh;
+	padding-right: 2em;
+	font-style: italic;
+	z-index: 1000;
+	transition: 200ms;
+}
+.backToList h3:hover {
+	transform: scale(1.1);
+	background: linear-gradient(130deg, red, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.deleteBtn {
+	position: relative;
+	width: fit-content;
+	margin: auto;
+	margin-top: -1.8em;
+	margin-bottom: 0.5em;
+	border-radius: 8px;
+}
+.deleteBtn:hover {
+	color: white;
+	background: linear-gradient(130deg, red, blue);
+}
+
+.backToTeam,
+.backToTeam h4 {
+	position: relative;
+	margin-top: -2.3em;
+	margin-left: 0.2em;
+	text-decoration: none;
+	color: white;
+}
+.backToTeam h4:hover {
+	background: linear-gradient(transparent, white, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.backToList2 {
+	position: absolute;
+	color: white;
+	transform: none;
+	left: 2vw;
+	top: 1.2vh;
 	font-style: italic;
 	z-index: 1000;
 	transition: 500ms;
+	text-decoration: none;
+	padding-right: 1em;
+	transform: scale(0.8);
 }
-.backToList h3:hover {
-	color: black;
+.backToList2:hover {
+	background: linear-gradient(130deg, red, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform: scale(0.9);
 }
 
 .homeDiv h1 {
-	margin-top: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 2.5em;
+	font-size: 2em;
+}
+.welcomeH1 {
+	font-style: italic;
 }
 
 .homeLinkDiv {
@@ -264,7 +322,12 @@ nav a:hover {
 	color: white;
 }
 .linkTag h1 {
-	font-size: 4em;
+	padding-top: 0.5em;
+	transform: scale(3);
+	/* padding-top: 0.5em; */
+	background: linear-gradient(130deg, gold, gold, silver, gold);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .nameDiv h4 {
@@ -430,11 +493,27 @@ h2 {
 	}
 }
 
-.logOutBtn {
+.userInfo {
 	position: fixed;
-	top: 1.3vh;
+	display: flex;
+	flex-direction: column;
+	width: 5em;
+	top: 0.5vh;
+	margin: 0;
 	right: 0.5vw;
 	z-index: 10000;
+}
+.userInfo h5 {
+	width: fit-content;
+	margin-bottom: -0.2em;
+	background: linear-gradient(130deg, blue, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-transform: uppercase;
+	margin-left: -1em;
+}
+
+.logOutBtn {
 	transform: scale(0.5);
 	border-radius: 7px;
 	transition: 500ms;
@@ -464,14 +543,18 @@ h2 {
 		/* z-index: -1; */
 	}
 	.span {
+		display: flex;
+		justify-content: center;
 		border: 2px rgb(black);
-		padding: 1em 1rem 0 1em;
+		padding: 1em 1rem 1rem 1em;
 		border-radius: 7px;
 		position: fixed;
 		bottom: 3vh;
-		left: 32vw;
+		width: 100%;
+		transform: scale(0.4);
+		/* left: 25vw; */
 		/* width: 50vw; */
-		height: 10vh;
+		/* height: 10vh; */
 		opacity: 0.2;
 		transition: 750ms;
 		box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -511,10 +594,7 @@ h2 {
 		margin-right: 1rem;
 		width: 25vw;
 	}
-	.span {
-		/* padding: 1em 21em 0 1em; */
-		left: 12vw;
-	}
+
 	nav a {
 		/* padding-left: 10em; */
 		margin-left: 2em;
@@ -569,10 +649,6 @@ h2 {
 	}
 }
 @media screen and (max-width: 400px) {
-	.span {
-		padding: 1em 21em 0 1em;
-		left: 4vw;
-	}
 	.card {
 		margin-bottom: 0.5em;
 	}
@@ -594,6 +670,9 @@ h2 {
 	.logButtonDiv {
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+	.pokemonTeamDiv {
+		min-width: 100vw;
 	}
 }
 @media screen and (max-width: 530px) {
