@@ -59,7 +59,7 @@ function Account() {
 				<Form onSubmit={handleSubmit}>
 					<Form.Group className="inputForForm" size="lg" controlId="Trainer">
 						<Form.Label>Trainer Name</Form.Label>
-						<Form.Control
+						<input
 							autoFocus
 							type="text"
 							value={trainer}
@@ -75,7 +75,7 @@ function Account() {
 							</h5>
 						</Form.Label>
 
-						<Form.Control
+						<input
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}

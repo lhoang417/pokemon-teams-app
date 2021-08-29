@@ -127,7 +127,7 @@ function Pokemon(props) {
 				<h3>{"<"} PokemonList</h3>
 			</Link>
 			<Link className="backToTeam" to={"/PokemonTeam"}>
-				<h4>{"<"} Team</h4>
+				<h4 className="font-effect-anaglyph">{"<"} Team</h4>
 			</Link>
 		</>
 	);

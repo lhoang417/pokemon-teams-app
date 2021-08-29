@@ -51,7 +51,7 @@ function PokemonList() {
 	return (
 		<div className="listDiv">
 			<input
-				className="searchInput"
+				className="searchInput font-effect-anaglyph"
 				placeholder="Search..."
 				type="text"
 				onChange={(e) => {

@@ -1,10 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@700&display=swap&effect=shadow-multiple|fire-animation|anaglyph|3d-float|3d");
+
+html::-webkit-scrollbar {
+	width: 1.2vw;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: linear-gradient(130deg, red, transparent, blue);
+	border-radius: 4px;
+}
+
+html::-webkit-scrollbar-track {
+	background-color: black;
+	height: 50vh;
+}
+
 nav {
 	background-color: black;
 	box-shadow: -0.1rem 0.5rem 0.7rem;
 }
 * {
 	user-select: none;
-	font-family: "Poppins";
+	font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -16,6 +32,7 @@ nav {
 	justify-content: center;
 	border: 3px rgb(gray);
 	border-radius: 7px;
+	z-index: 5;
 }
 .nameDiv {
 	margin-bottom: 1em;
@@ -151,7 +168,7 @@ nav a:hover {
 	opacity: 0.5;
 	font-size: 0.5em;
 	font-style: italic;
-	z-index: 2000;
+	/* z-index: 2000; */
 	transition: 200ms;
 }
 
@@ -172,7 +189,7 @@ nav a:hover {
 	border-radius: 7px;
 	transition: 0.5s;
 	cursor: pointer;
-	z-index: 1;
+	/* z-index: 1; */
 }
 
 .card-header {
@@ -212,6 +229,8 @@ nav a:hover {
 	background: linear-gradient(130deg, gold, white, gold);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	font-weight: 900;
+	text-shadow: 5px 9px 4px rgba(53, 53, 53, 0.4);
 }
 
 .homeDiv {
@@ -273,11 +292,13 @@ nav a:hover {
 	margin-left: 0.2em;
 	text-decoration: none;
 	color: white;
+	font-weight: 800;
+	font-style: italic;
+	transition: 250ms linear;
 }
 .backToTeam h4:hover {
-	background: linear-gradient(transparent, white, red);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: rgba(41, 40, 40, 0.9);
+	transform: scaleY(1.2);
 }
 
 .backToList2 {
@@ -310,24 +331,103 @@ nav a:hover {
 }
 
 .homeLinkDiv {
-	background: linear-gradient(to top, #f5de34, white);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 	width: 50vw;
 	margin: auto;
 	margin-top: -3em;
 }
 
 .linkTag {
-	color: white;
+	display: inline-block;
+	width: 100%;
+	height: fit-content;
+	padding: 10px 30px;
+	opacity: 0.8;
+	transition: 0.5s;
 }
+
+.linkTag:hover {
+	opacity: 1;
+}
+
+.linkTag span {
+	display: block;
+	position: absolute;
+	background: gold;
+	z-index: 1000;
+}
+
+.linkTag span:nth-child(1) {
+	left: 26%;
+	bottom: 23%;
+	width: 3px;
+	height: 25%;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+}
+
+.linkTag:hover span:nth-child(1) {
+	transform: scaleY(1);
+	transform-origin: top;
+	transition: transform 0.5s;
+}
+.linkTag span:nth-child(2) {
+	left: 26%;
+	bottom: 23%;
+	width: 48%;
+	height: 3px;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s;
+}
+
+.linkTag:hover span:nth-child(2) {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition: transform 0.5s;
+}
+
+.linkTag span:nth-child(3) {
+	right: 26%;
+	bottom: 23%;
+	width: 3px;
+	height: 25%;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.5s;
+}
+
+.linkTag:hover span:nth-child(3) {
+	transform: scaleY(1);
+	transform-origin: bottom;
+	transition: transform 0.5s;
+}
+.linkTag span:nth-child(4) {
+	left: 26%;
+	top: 52%;
+	width: 48%;
+	height: 3px;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.5s;
+}
+
+.linkTag:hover span:nth-child(4) {
+	transform: scaleX(1);
+	transform-origin: right;
+	transition: transform 0.5s;
+}
+
 .linkTag h1 {
-	padding-top: 0.5em;
-	transform: scale(3);
 	/* padding-top: 0.5em; */
+	margin-top: 2em;
+	transform: scale(3);
 	background: linear-gradient(130deg, gold, gold, silver, gold);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	font-weight: 900;
+	color: white;
+	text-shadow: 4px 7px 4px rgba(53, 53, 53, 0.4);
 }
 
 .nameDiv h4 {
@@ -504,6 +604,8 @@ h2 {
 	z-index: 10000;
 }
 .userInfo h5 {
+	position: absolute;
+	left: -55%;
 	width: fit-content;
 	margin-bottom: -0.2em;
 	background: linear-gradient(130deg, blue, red);
@@ -511,18 +613,22 @@ h2 {
 	-webkit-text-fill-color: transparent;
 	text-transform: uppercase;
 	margin-left: -1em;
+	text-align: center;
+	font-weight: 900;
 }
 
 .logOutBtn {
+	position: absolute;
 	transform: scale(0.5);
+	right: -15%;
 	border-radius: 7px;
 	transition: 500ms;
+	opacity: 0.5;
 }
 .logOutBtn:hover {
-	transform: scale(0.7);
+	transform: scale(0.6);
 	background: linear-gradient(130deg, blue, red);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	opacity: 1;
 }
 
 .successH1 {
@@ -535,12 +641,84 @@ h2 {
 }
 
 @media screen and (max-width: 1180px) {
+	.linkTag span:nth-child(1) {
+		left: 20%;
+		bottom: 23%;
+		width: 3px;
+		height: 20%;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(1) {
+		transform: scaleY(1);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(2) {
+		left: 20%;
+		bottom: 23%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(2) {
+		transform: scaleX(1);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag span:nth-child(3) {
+		right: 20%;
+		bottom: 23%;
+		width: 3px;
+		height: 20%;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(3) {
+		transform: scaleY(1);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(4) {
+		left: 20%;
+		top: 57%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(4) {
+		transform: scaleX(1);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+	.linkTag h1 {
+		font-size: 1em;
+	}
+	.App {
+		padding-bottom: 5em;
+		min-height: 120vh;
+	}
+	.backToList2 {
+		position: fixed;
+	}
+	.card-title {
+		font-size: 1.5em;
+	}
 	.team {
 		position: fixed;
 		top: -2vh;
 		left: 0;
-		/* width: 50vw; */
-		/* z-index: -1; */
 	}
 	.span {
 		display: flex;
@@ -552,9 +730,6 @@ h2 {
 		bottom: 3vh;
 		width: 100%;
 		transform: scale(0.4);
-		/* left: 25vw; */
-		/* width: 50vw; */
-		/* height: 10vh; */
 		opacity: 0.2;
 		transition: 750ms;
 		box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -564,11 +739,114 @@ h2 {
 		opacity: 1;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	.welcome h1 {
+		font-size: 2em;
+	}
+	.inputForForm {
+		margin: 0 6em;
+	}
+	.inputForForm2 {
+		margin: 0 6em;
+	}
+	.logButtonDiv {
+		padding: 0 6em;
+	}
+	.App {
+		overflow-y: hidden;
+		min-height: 100vh;
+	}
+
+	.dashUserSpan {
+		font-size: 3em;
+	}
+	.welcomeH1 {
+		font-size: 1.8em;
+	}
+
+	/* .homeDiv {
+		margin-top: 2em;
+	} */
+
+	.linkTag span:nth-child(1) {
+		left: 25%;
+		bottom: 28%;
+		width: 3px;
+		height: 12%;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(1) {
+		transform: scaleY(1);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(2) {
+		left: 25%;
+		bottom: 28%;
+		width: 50%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(2) {
+		transform: scaleX(1);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag span:nth-child(3) {
+		right: 25%;
+		bottom: 28%;
+		width: 3px;
+		height: 12%;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(3) {
+		transform: scaleY(1);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(4) {
+		left: 25%;
+		top: 60%;
+		width: 50%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(4) {
+		transform: scaleX(1);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+}
+
+.imgDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2em;
+	text-align: center;
+	transform: scale(3);
+	margin-top: -1rem;
+}
+
 @media screen and (max-width: 720px) {
 	.container {
 		display: flex;
 		flex-direction: column;
-		/* margin-top: 2%; */
 	}
 	.pokeDiv {
 		display: flex;
@@ -578,9 +856,7 @@ h2 {
 		font-size: 1rem;
 		padding-bottom: 1em;
 	}
-	/* .imgDiv {
-		padding-bottom: 10em;
-	} */
+
 	.imgCard {
 		width: 30%;
 	}
@@ -596,59 +872,93 @@ h2 {
 	}
 
 	nav a {
-		/* padding-left: 10em; */
-		margin-left: 2em;
-		max-width: 12vw;
+		margin-left: 3em;
+		min-width: 12vw;
 	}
 }
-@media screen and (max-width: 767px) {
-	.linkTag h1 {
-		font-size: 2em;
-	}
-	.welcome span {
-		color: white;
-		background: black;
-	}
+@media screen and (max-width: 530px) {
 	.welcome h1 {
 		font-size: 1.3em;
 	}
-	.inputForForm {
-		margin-left: 2em;
-		margin-right: 2em;
+	.linkTag h1 {
+		font-size: 0.8em;
 	}
-	.inputForForm2 {
-		margin-left: 2em;
-		margin-right: 2em;
+	.linkTag span:nth-child(1) {
+		left: 20%;
+		bottom: 21%;
+		width: 3px;
+		height: 13%;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.5s;
 	}
-	.logButtonDiv {
-		padding-left: 2em;
-		padding-right: 2em;
+
+	.linkTag:hover span:nth-child(1) {
+		transform: scaleY(1);
+		transform-origin: top;
+		transition: transform 0.5s;
 	}
-	.container {
-		padding-bottom: 5em;
+	.linkTag span:nth-child(2) {
+		left: 20%;
+		bottom: 21%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(2) {
+		transform: scaleX(1);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag span:nth-child(3) {
+		right: 20%;
+		bottom: 21%;
+		width: 3px;
+		height: 13%;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(3) {
+		transform: scaleY(1);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(4) {
+		left: 20%;
+		top: 66%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(4) {
+		transform: scaleX(1);
+		transform-origin: right;
+		transition: transform 0.5s;
 	}
 }
 
-.imgDiv {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	padding: 2em;
-	text-align: center;
-	transform: scale(3);
-	margin-top: -1rem;
-}
-
-@media screen and (max-width: 991px) {
-	.card-title {
-		font-size: 1.5em;
-	}
-	.welcome h1 {
-		font-size: 2em;
-	}
-}
 @media screen and (max-width: 400px) {
+	.backToList h3 {
+		font-size: 0.6em;
+	}
+	.backToList2 {
+		position: fixed;
+		left: 0;
+		top: 2vh;
+		padding: 0;
+	}
+	.backToList2 h3 {
+		font-size: 0.8em;
+	}
 	.card {
 		margin-bottom: 0.5em;
 	}
@@ -674,9 +984,95 @@ h2 {
 	.pokemonTeamDiv {
 		min-width: 100vw;
 	}
-}
-@media screen and (max-width: 530px) {
-	.welcome h1 {
-		font-size: 1.3em;
+
+	.linkTag h1 {
+		font-size: 0.7em;
+	}
+	.linkTag span:nth-child(1) {
+		left: 20%;
+		bottom: 17%;
+		width: 3px;
+		height: 12%;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(1) {
+		transform: scaleY(1);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(2) {
+		left: 20%;
+		bottom: 17%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(2) {
+		transform: scaleX(1);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag span:nth-child(3) {
+		right: 20%;
+		bottom: 17%;
+		width: 3px;
+		height: 12%;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(3) {
+		transform: scaleY(1);
+		transform-origin: bottom;
+		transition: transform 0.5s;
+	}
+	.linkTag span:nth-child(4) {
+		left: 20%;
+		top: 71%;
+		width: 60%;
+		height: 3px;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.5s;
+	}
+
+	.linkTag:hover span:nth-child(4) {
+		transform: scaleX(1);
+		transform-origin: right;
+		transition: transform 0.5s;
+	}
+	.dashUserSpan {
+		font-size: 3em;
+	}
+
+	.userInfo {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 10;
+	}
+	.userInfo h5 {
+		position: fixed;
+		top: 0.4%;
+		left: 40%;
+		width: 100%;
+		font-size: 0.85em;
+		margin-bottom: -1em;
+		right: 0;
+	}
+	.logOutBtn {
+		position: absolute;
+		top: 2vh;
+	}
+	.navbar a {
+		min-width: 31%;
 	}
 }

@@ -12,17 +12,23 @@ function Home() {
 					Welcome to Pokemon Teams!
 					<br />
 					Click on the link below to view all pokemon. <br />
-					Select your team... <br />
+					{/* Select your team... <br />
 					FINALLY BATTLE THE GYM LEADERS!
-					<br />
+					<br /> */}
 				</h1>
 				<div className="homeLinkDiv">
-					<Link
-						className="linkTag navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
-						to="/Dashboard"
-					>
-						<h1>Pokemon</h1>
-					</Link>
+					<div>
+						<Link
+							className="linkTag navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
+							to="/Dashboard"
+						>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<h1 className="homeH1">Pokemon</h1>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>
