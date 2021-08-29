@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+// import { Form, Button } from "react-bootstrap";
 import { useEasybase } from "easybase-react";
 
 function Account() {
@@ -56,36 +56,36 @@ function Account() {
 				</h1>
 			</div>
 			<div className="Login">
-				<Form onSubmit={handleSubmit}>
-					<Form.Group className="inputForForm" size="lg" controlId="Trainer">
-						<Form.Label>Trainer Name</Form.Label>
-						<Form.Control
+				<form onSubmit={handleSubmit}>
+					<div className="inputForForm" size="lg" controlId="Trainer">
+						<label>Trainer Name</label>
+						<input
 							// autoFocus
 							type="text"
 							// value={trainer}
 							onChange={(e) => setTrainer(e.target.value)}
 						/>
-					</Form.Group>
-					<Form.Group className="inputForForm2" size="lg" controlId="password">
-						<Form.Label style={{ paddingTop: ".5em" }}>
+					</div>
+					<div className="inputForForm2" size="lg" controlId="password">
+						<label style={{ paddingTop: ".5em" }}>
 							Password
 							<h5 className="pwDesc">
 								Must Contain 8 Characters, One Uppercase, One Lowercase, One
 								Number and one special case Character
 							</h5>
-						</Form.Label>
+						</label>
 
-						<Form.Control
+						<input
 							type="password"
 							// value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
-					</Form.Group>
+					</div>
 					<div
 						className="logButtonDiv"
 						style={{ display: "flex", margin: ".2rem" }}
 					>
-						<Button
+						<button
 							onClick={handleSignUpPress}
 							className="logInBtn"
 							// block="true"
@@ -94,8 +94,8 @@ function Account() {
 							disabled={!validateForm()}
 						>
 							Signup
-						</Button>
-						<Button
+						</button>
+						<button
 							onClick={handleLogInPress}
 							className="logInBtn"
 							// block="true"
@@ -104,13 +104,13 @@ function Account() {
 							disabled={!validateForm()}
 						>
 							Login
-						</Button>
+						</button>
 					</div>
 					<h1 className="successH1">
 						{success}
 						{loggedInUser}
 					</h1>
-				</Form>
+				</form>
 			</div>
 		</div>
 	);
