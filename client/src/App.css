@@ -341,14 +341,16 @@ nav a:hover {
 }
 
 .resultsDiv {
-	padding: 2em;
+	position: fixed;
+	top: 30vh;
+	padding: 4em;
 	width: 50vw;
 	margin: auto;
 	background: linear-gradient(135deg, transparent, red, transparent);
 	border-radius: 1em;
 	color: white;
-	margin-top: 0.5em;
 	font-size: 2em;
+	/* transition: 2s; */
 }
 
 .deleteBtn:hover {
@@ -820,6 +822,10 @@ h2 {
 }
 
 @media screen and (max-width: 720px) {
+	.resultsDiv {
+		font-size: 1.7em;
+		left: 20vw;
+	}
 	.container {
 		display: flex;
 		flex-direction: column;
