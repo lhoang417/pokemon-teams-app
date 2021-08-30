@@ -94,7 +94,7 @@ function Pokemon(props) {
 						src={imageUrl}
 					/>
 					<div className="nameDiv">
-						<h4>
+						<h4 className="font-effect-3d-float">
 							{name
 								.toLowerCase()
 								.split(" ")
@@ -107,16 +107,32 @@ function Pokemon(props) {
 
 				<div className="baseStatsDiv">
 					<h1>BASE STATS</h1>
-					<h2>HP: {hp}</h2>
-					<h2>Attack: {attack}</h2>
-					<h2>Defense: {defense}</h2>
-					<h2>Special Attack: {specialAttack}</h2>
-					<h2>Special Defense: {specialDefense}</h2>
-					<h2>Speed: {speed}</h2>
-					<h1>
+					<h2>
+						HP: <span className="font-effect-3d">{hp}</span>
+					</h2>
+					<h2>
+						Attack: <span className="font-effect-3d">{attack}</span>
+					</h2>
+					<h2>
+						Defense: <span className="font-effect-3d">{defense}</span>
+					</h2>
+					<h2>
+						Special Attack:{" "}
+						<span className="font-effect-3d">{specialAttack}</span>
+					</h2>
+					<h2>
+						Special Defense:{" "}
+						<span className="font-effect-3d">{specialDefense}</span>
+					</h2>
+					<h2>
+						Speed: <span className="font-effect-3d">{speed}</span>
+					</h2>
+					<h2>
 						TYPE: <br />
-						{type.replace(/"/g, "").toUpperCase()}
-					</h1>
+						<span className="font-effect-3d">
+							{type.replace(/"/g, "").toUpperCase()}
+						</span>
+					</h2>
 				</div>
 			</div>
 			<Link

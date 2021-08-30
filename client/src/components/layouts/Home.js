@@ -8,13 +8,12 @@ function Home() {
 		<div className="homeDiv">
 			<div className="homeHeading">
 				<span className="dashUserSpan">{userID()}</span>
-				<h1 className="welcomeH1">
+				<h1 className="welcomeH1 font-effect-fire-animation">
 					Welcome to Pokemon Teams!
 					<br />
-					Click on the link below to view all pokemon. <br />
-					{/* Select your team... <br />
+					Select your team with the link below... <br />
 					FINALLY BATTLE THE GYM LEADERS!
-					<br /> */}
+					<br />
 				</h1>
 				<div className="homeLinkDiv">
 					<div>

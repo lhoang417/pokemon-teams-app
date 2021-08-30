@@ -46,7 +46,7 @@ function PokemonTeam() {
 	const [nameToDelete, setNameToDelete] = useState("");
 
 	// const {mounted} = async () => {
-	const { frame } = useReturn(() => db("POKEMON").return().limit(6), []);
+	const { frame } = useReturn(() => db("POKEMON", true).return().limit(6), []);
 	// setEasybaseData(ebData);
 
 	// useEffect(() => {
@@ -81,7 +81,7 @@ function PokemonTeam() {
 										alt=""
 									/>
 									<div className="card-body mx-auto">
-										<h6 className="card-title">
+										<h6 className="card-title card-title2 font-effect-3d-float ">
 											{ele.name
 												.toLowerCase()
 												.split(" ")
@@ -106,6 +106,7 @@ function PokemonTeam() {
 						</div> */}
 								</div>
 							</StyledLink>
+
 							<button
 								className="deleteBtn"
 								onMouseOver={(e) => {
@@ -119,6 +120,9 @@ function PokemonTeam() {
 						</div>
 					))}
 				</div>
+				<Link className="toBattle" to={`/battle`}>
+					battle
+				</Link>
 			</div>
 
 			<Link className="backToList2" to="/Dashboard">

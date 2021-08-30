@@ -11,6 +11,7 @@ import Dashboard from "./components/layouts/Dashboard";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Pokemon from "./components/pokemon/Pokemon";
 import Home from "./components/layouts/Home";
+import Battle from "./components/pokemon/Battle";
 
 function LogIn() {
 	const { isUserSignedIn, signOut, userID } = useEasybase();
@@ -26,6 +27,7 @@ function LogIn() {
 							<Route exact path="/Dashboard" component={Dashboard} />
 							<Route exact path="/pokemon/:pokemonIndex" component={Pokemon} />
 							<Route exact path="/PokemonTeam" component={PokemonTeam} />
+							<Route exact path="/battle" component={Battle} />
 						</Switch>
 					</div>
 				</div>

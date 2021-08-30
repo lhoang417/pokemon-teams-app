@@ -160,7 +160,7 @@ function PokemonCard(props) {
 						</h6>
 					) : null}
 					<div className="card-body mx-auto">
-						<h6 className="card-title">
+						<h6 className="card-title  font-effect-3d-float">
 							{name
 								.toLowerCase()
 								.split(" ")
