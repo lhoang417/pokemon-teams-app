@@ -8,7 +8,7 @@ function Account() {
 	const [success, setSuccess] = useState("");
 	const [loggedInUser, setLoggedInUser] = useState("");
 
-	async function validateForm() {
+	function validateForm() {
 		return (
 			trainer.length > 0 &&
 			password.match(

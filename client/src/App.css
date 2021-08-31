@@ -340,7 +340,7 @@ nav a:hover {
 	transform: scale(1.1);
 }
 
-.resultsDiv {
+/* .resultsDiv {
 	position: fixed;
 	top: 30vh;
 	padding: 4em;
@@ -351,7 +351,78 @@ nav a:hover {
 	color: white;
 	font-size: 2em;
 	cursor: pointer;
-	/* transition: 2s; */
+	transition: 2s;
+} */
+
+.modal-backdrop {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(135deg, transparent, red, transparent);
+	top: 0;
+	left: 0;
+}
+.modal-content-wrapper {
+	position: fixed;
+	width: 70vw;
+	height: 60vh;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(37, 37, 37, 0.8);
+	border-radius: 1em;
+	padding: 2em;
+	box-shadow: 7px 10px 7px rgba(53, 53, 53, 0.4);
+}
+
+.modal-content {
+	border: none;
+	width: fit-content;
+	background: transparent;
+	color: white;
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 2em;
+	text-align: center;
+	font-style: italic;
+}
+.modal-content h1 {
+	padding: 0.5em;
+	color: gray;
+}
+.modal-content h5 {
+	font-style: normal;
+	margin-top: -1em;
+	margin-bottom: 1em;
+	font-size: 0.5em;
+	color: darkgray;
+}
+
+.modal-content span {
+	font-size: 1.2em;
+	color: gray;
+}
+
+.winner {
+	font-size: 2em;
+	font-weight: 900;
+}
+
+.exitBtn {
+	position: absolute;
+	bottom: 5%;
+	width: 5em;
+	margin: auto;
+	left: 0;
+	right: 0;
+	background: linear-gradient(135deg, transparent, red, transparent);
+	border-radius: 0.4em;
+	color: white;
+	font-weight: 900;
 }
 
 .deleteBtn:hover {
@@ -875,6 +946,14 @@ h2 {
 		/* min-width: 100vw; */
 		margin-top: -10em;
 		max-height: 100%;
+	}
+	.modal-content {
+		font-size: 1.2rem;
+	}
+	.modal-content-wrapper {
+		left: 0;
+		right: 0;
+		margin: auto;
 	}
 }
 
