@@ -169,6 +169,12 @@ nav a:hover {
 	width: 100%;
 }
 
+.divInDiv2 h3 {
+	color: white;
+	padding: 0.1em;
+	font-size: 0.7em;
+}
+
 .span:hover {
 	opacity: 1;
 }
@@ -322,6 +328,9 @@ nav a:hover {
 	border-radius: 1em;
 	transition: 300ms;
 }
+.battleDiv button {
+	background: linear-gradient(135deg, gray, black, gray);
+}
 
 .battleH1 {
 	font-weight: 900;
@@ -358,7 +367,7 @@ nav a:hover {
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
-	background: linear-gradient(135deg, transparent, red, transparent);
+	/* background: linear-gradient(135deg, transparent, yellow, transparent); */
 	top: 0;
 	left: 0;
 }
@@ -371,7 +380,12 @@ nav a:hover {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: rgba(37, 37, 37, 0.8);
+	background: linear-gradient(
+		135deg,
+		transparent,
+		rgb(68, 68, 68),
+		transparent
+	);
 	border-radius: 1em;
 	padding: 2em;
 	box-shadow: 7px 10px 7px rgba(53, 53, 53, 0.4);
@@ -386,12 +400,14 @@ nav a:hover {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	top: 0.5em;
 	font-size: 2em;
 	text-align: center;
 	font-style: italic;
 }
 .modal-content h1 {
 	padding: 0.5em;
+
 	color: gray;
 }
 .modal-content h5 {
@@ -399,17 +415,18 @@ nav a:hover {
 	margin-top: -1em;
 	margin-bottom: 1em;
 	font-size: 0.5em;
-	color: darkgray;
+	color: rgb(199, 199, 199);
 }
 
 .modal-content span {
-	font-size: 1.2em;
-	color: gray;
+	font-size: 1.3em;
+	color: rgb(199, 199, 199);
 }
 
 .winner {
-	font-size: 2em;
+	font-size: 2.2em;
 	font-weight: 900;
+	margin-top: -0.7em;
 }
 
 .exitBtn {
@@ -948,7 +965,8 @@ h2 {
 		max-height: 100%;
 	}
 	.modal-content {
-		font-size: 1.2rem;
+		padding-top: 2em;
+		font-size: 1.4rem;
 	}
 	.modal-content-wrapper {
 		left: 0;
@@ -1005,67 +1023,6 @@ h2 {
 	.linkTag h1 {
 		font-size: 0.7em;
 	}
-	.linkTag span:nth-child(1) {
-		left: 20%;
-		bottom: 17%;
-		width: 3px;
-		height: 12%;
-		transform: scaleY(0);
-		transform-origin: bottom;
-		transition: transform 0.5s;
-	}
-
-	.linkTag:hover span:nth-child(1) {
-		transform: scaleY(1);
-		transform-origin: top;
-		transition: transform 0.5s;
-	}
-	.linkTag span:nth-child(2) {
-		left: 20%;
-		bottom: 17%;
-		width: 60%;
-		height: 3px;
-		transform: scaleX(0);
-		transform-origin: right;
-		transition: transform 0.5s;
-	}
-
-	.linkTag:hover span:nth-child(2) {
-		transform: scaleX(1);
-		transform-origin: left;
-		transition: transform 0.5s;
-	}
-
-	.linkTag span:nth-child(3) {
-		right: 20%;
-		bottom: 17%;
-		width: 3px;
-		height: 12%;
-		transform: scaleY(0);
-		transform-origin: top;
-		transition: transform 0.5s;
-	}
-
-	.linkTag:hover span:nth-child(3) {
-		transform: scaleY(1);
-		transform-origin: bottom;
-		transition: transform 0.5s;
-	}
-	.linkTag span:nth-child(4) {
-		left: 20%;
-		top: 71%;
-		width: 60%;
-		height: 3px;
-		transform: scaleX(0);
-		transform-origin: left;
-		transition: transform 0.5s;
-	}
-
-	.linkTag:hover span:nth-child(4) {
-		transform: scaleX(1);
-		transform-origin: right;
-		transition: transform 0.5s;
-	}
 	.dashUserSpan {
 		font-size: 3em;
 	}
@@ -1092,6 +1049,9 @@ h2 {
 	.navbar a {
 		min-width: 31%;
 	}
+	/* .homeHeading {
+		margin-top: 0.1em;
+	} */
 }
 
 .cTfAuX {

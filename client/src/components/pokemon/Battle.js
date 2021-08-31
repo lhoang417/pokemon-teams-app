@@ -105,6 +105,12 @@ function Battle() {
 			setLoser(userID());
 			setWinner(opp);
 			setOpen(true);
+		} else {
+			return (
+				<div>
+					<h1> Draw! </h1>
+				</div>
+			);
 		}
 	}
 
@@ -118,7 +124,7 @@ function Battle() {
 					<h2 className="text-center ">Choose your opponent!</h2>
 				</div>
 				<div className="row">
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(ashTeam);
@@ -137,14 +143,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{ashTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(brockTeam);
@@ -161,14 +168,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{brockTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(mistyTeam);
@@ -185,14 +193,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{mistyTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(ltSurgeTeam);
@@ -209,14 +218,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{ltSurgeTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(erikaTeam);
@@ -233,14 +243,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{erikaTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(kogaTeam);
@@ -257,14 +268,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{kogaTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(sabrinaTeam);
@@ -281,14 +293,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{sabrinaTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(blaineTeam);
@@ -305,14 +318,15 @@ function Battle() {
 								<div className="divInDiv2">
 									{blaineTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
 							</div>
 						</button>
 					</div>
-					<div className="col-lg-4 col-sm-6">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
 						<button
 							onMouseOver={() => {
 								setStats(giovanniTeam);
@@ -329,7 +343,8 @@ function Battle() {
 								<div className="divInDiv2">
 									{giovanniTeam.map((ele, i) => (
 										<div key={ele.gymleader[i]}>
-											<img src={pokeball} alt="" style={{ width: "80%" }} />
+											<img src={pokeball} alt="" style={{ width: "30%" }} />
+											<h3>{ele.name}</h3>
 										</div>
 									))}
 								</div>
@@ -395,20 +410,81 @@ function Battle() {
 									className="modal-content"
 								>
 									<h5>
-										{userID()}'s Battle Level:{" "}
+										{userID()}'s Battle Level:
 										<span className="font-effect-3d-float">
-											{yourDispStats}
-										</span>{" "}
+											&nbsp;{yourDispStats}
+										</span>
 										<br />
 										vs
-										<br /> {opp}'s Battle Level:{" "}
-										<span className="font-effect-3d-float">{oppDispStats}</span>
+										<br /> {opp}'s Battle Level:
+										<span className="font-effect-3d-float">
+											&nbsp;{oppDispStats}
+										</span>
 									</h5>
-									<h1 className="font-effect-anaglyph">{loser}</h1>
-									was defeated by <br />
-									<h1 className="winner font-effect-fire-animation">
+
+									<motion.h1
+										initial={{
+											x: 100,
+											opacity: 0,
+										}}
+										animate={{
+											x: 0,
+											opacity: 1,
+											transition: {
+												delay: 2,
+												duration: 3,
+											},
+										}}
+										exit={{
+											x: 100,
+											opacity: 0,
+										}}
+										className="font-effect-anaglyph"
+									>
+										{loser}
+									</motion.h1>
+									<motion.h4
+										initial={{
+											x: 100,
+											opacity: 0,
+										}}
+										animate={{
+											x: 0,
+											opacity: 1,
+											transition: {
+												delay: 3,
+												duration: 2,
+											},
+										}}
+										exit={{
+											x: 100,
+											opacity: 0,
+										}}
+									>
+										was defeated by{" "}
+									</motion.h4>
+									<br />
+									<motion.h1
+										initial={{
+											x: 100,
+											opacity: 0,
+										}}
+										animate={{
+											x: 0,
+											opacity: 1,
+											transition: {
+												delay: 4,
+												duration: 2,
+											},
+										}}
+										exit={{
+											x: 100,
+											opacity: 0,
+										}}
+										className="winner font-effect-fire-animation"
+									>
 										{winner}
-									</h1>
+									</motion.h1>
 								</motion.div>
 								<button className="exitBtn" onClick={() => setOpen(false)}>
 									Exit

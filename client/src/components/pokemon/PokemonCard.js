@@ -48,7 +48,7 @@ function PokemonCard(props) {
 	const [imageUrl, setImageUrl] = useState("");
 	const [pokemonIndex, setPokemonIndex] = useState("");
 	const [pokemon, setPokemon] = useState([]);
-	const { db, useReturn } = useEasybase();
+	const { db, useReturn, userID } = useEasybase();
 	const [pokemonTeam, setPokemonTeam] = useState([]);
 	const [imageLoading, setImageLoading] = useState(true);
 	const [tooManyRequests, setTooManyRequests] = useState(false);
@@ -98,6 +98,7 @@ function PokemonCard(props) {
 					Speed: speed,
 					Type: type,
 					Image: imageUrl,
+					Gymleader: userID().match(/^(.+)@/)[1],
 				})
 				.one();
 		}
