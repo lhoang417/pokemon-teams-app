@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<div className="homeDiv">
 			<div className="homeHeading">
-				<span className="dashUserSpan">{userID()}</span>
+				<span className="dashUserSpan">{userID().match(/^(.+)@/)[1]}</span>
 				<h1 className="welcomeH1 font-effect-fire-animation">
 					Welcome to Pokemon Teams!
 					<br />

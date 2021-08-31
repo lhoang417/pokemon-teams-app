@@ -102,12 +102,12 @@ function PokemonCard(props) {
 		pokemonTeam,
 	]);
 
-	const addToTeam = () => {
+	const addToTeam = async () => {
 		if (frame.length >= 6) {
 			alert("Your team is full!");
 		} else {
 			setPokemonTeam([...pokemonTeam, pokemon]);
-			db("POKEMON", true)
+			await db("POKEMON", true)
 				.insert({
 					Id: pokemonIndex,
 					Name: name,
