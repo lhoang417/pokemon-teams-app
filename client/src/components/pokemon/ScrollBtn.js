@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ScrollButton = () => {
 	const [visible, setVisible] = useState(false);
 
-	const toggleVisible = () => {
+	const toggleVisible = async () => {
 		const scrolled = document.documentElement.scrollTop;
 		if (scrolled > 100) {
 			setVisible(true);

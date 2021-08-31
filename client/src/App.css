@@ -609,51 +609,6 @@ h2 {
 .loginDiv {
 	max-height: 100%;
 }
-.cTfAuX {
-	color: white !important;
-}
-
-.gzrYKy {
-	height: 2em !important;
-}
-.eACHUM {
-	color: lightgray !important;
-}
-
-.emHZcR {
-	background: linear-gradient(135deg, blue, red);
-}
-.bcpMyF {
-	color: lightgray !important;
-}
-
-.jnwwYn {
-	background: linear-gradient(135deg, red, black);
-}
-.jnwwYn h1 {
-	color: white;
-	text-align: center;
-}
-.jnwwYn h1::before {
-	content: "Welcome to Pokemon Teams";
-	text-align: center;
-	font-size: 1.5em;
-	padding-bottom: 1em;
-}
-.esXoFF {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-}
-.ijhUJF {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background: linear-gradient(135deg, black, red);
-	height: 100vh;
-	overflow: hidden;
-}
 
 .Login {
 	display: flex;
@@ -1058,4 +1013,50 @@ h2 {
 	.navbar a {
 		min-width: 31%;
 	}
+}
+
+.cTfAuX {
+	color: white !important;
+}
+
+.gzrYKy {
+	height: 2em !important;
+}
+.eACHUM {
+	color: lightgray !important;
+}
+
+.emHZcR {
+	background: linear-gradient(135deg, blue, red);
+}
+.bcpMyF {
+	color: lightgray !important;
+}
+
+.jnwwYn {
+	background: linear-gradient(135deg, red, black);
+}
+.jnwwYn h1 {
+	color: white;
+	text-align: center;
+}
+.jnwwYn h1::before {
+	content: "Welcome to Pokemon Teams";
+	text-align: center;
+	font-size: 1.5em;
+	padding-bottom: 1em;
+}
+.esXoFF {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.ijhUJF {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: linear-gradient(135deg, black, red);
+	height: 100vh;
+	overflow: hidden;
 }

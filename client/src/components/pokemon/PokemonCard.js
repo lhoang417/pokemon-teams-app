@@ -79,28 +79,7 @@ function PokemonCard(props) {
 			setSpecialDefense(res.data.stats[4].base_stat);
 			setSpeed(res.data.stats[5].base_stat);
 		});
-		// fetch(pokemonUrl)
-		// 	.then((response) => response.json())
-		// 	.then(function (allpokemon) {
-		// 		fetchPokemonData(allpokemon.results);
-		// 	});
-
-		// function fetchPokemonData() {
-		// 	fetch(pokemonUrl)
-		// 		.then((response) => response.json())
-		// 		.then(function (pokeData) {
-		// 			setType(JSON.stringify(pokeData.types[0].type.name));
-		// 		});
-		// }
-	}, [
-		props.name,
-		props.url,
-		pokemonIndex,
-		type,
-		pokemonUrl,
-		pokeImgURL,
-		pokemonTeam,
-	]);
+	}, [props.name, props.url, pokemonUrl, pokeImgURL, pokemonTeam]);
 
 	const addToTeam = async () => {
 		if (frame.length >= 6) {

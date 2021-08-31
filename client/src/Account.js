@@ -8,7 +8,7 @@ function Account() {
 	const [success, setSuccess] = useState("");
 	const [loggedInUser, setLoggedInUser] = useState("");
 
-	function validateForm() {
+	async function validateForm() {
 		return (
 			trainer.length > 0 &&
 			password.match(
@@ -23,7 +23,7 @@ function Account() {
 
 	const { signIn, signUp } = useEasybase();
 
-	const clearInputs = () => {
+	const clearInputs = async () => {
 		setTrainer("");
 		setPassword("");
 	};
@@ -39,9 +39,6 @@ function Account() {
 			created_at: new Date().toString,
 			username: trainer,
 		});
-		// if (res.success) {
-		// 	await signIn(email, password);
-		// }
 		setLoggedInUser(trainer);
 
 		clearInputs();
