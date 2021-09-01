@@ -123,8 +123,8 @@ function Battle() {
 			automatic === 1
 		) {
 			setLoser(opp);
-			setYourDispStats("too Strong!");
-			setWinner("MagiKarp FTW!");
+			setYourDispStats("over 9,000!!");
+			setWinner("Magikarp FTW!");
 			setOpen(true);
 		} else if (yourStats > oppStats) {
 			setLoser(opp);

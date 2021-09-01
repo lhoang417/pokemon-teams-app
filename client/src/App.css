@@ -335,6 +335,11 @@ nav a:hover {
 	box-shadow: 0 0 5px #f5de34, 0 0 10px #f5de34;
 }
 
+.battleDiv h1 {
+	border: none;
+	background: transparent;
+}
+
 .battleH1 {
 	font-weight: 900;
 	margin-bottom: -0.2em;
