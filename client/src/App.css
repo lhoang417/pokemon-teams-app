@@ -194,8 +194,6 @@ nav a:hover {
 	opacity: 0.5;
 	font-size: 0.5em;
 	font-style: italic;
-	/* z-index: 2000; */
-	transition: 200ms;
 }
 
 .addPokemonBtn:hover {
@@ -330,6 +328,11 @@ nav a:hover {
 }
 .battleDiv button {
 	background: linear-gradient(135deg, gray, black, gray);
+	transition: 100ms;
+}
+
+.battleDiv button:hover {
+	box-shadow: 0 0 5px #f5de34, 0 0 10px #f5de34;
 }
 
 .battleH1 {
@@ -671,8 +674,8 @@ h2 {
 	border-radius: 100%;
 	z-index: 1;
 
-	filter: blur(1px);
-	animation: pulse 1s infinite;
+	filter: blur(2px);
+	animation: pulse 1.2s infinite;
 }
 .upDiv h3 {
 	position: relative;
@@ -970,6 +973,8 @@ h2 {
 	.modal-content {
 		padding-top: 2em;
 		font-size: 1.4rem;
+		margin-left: -1.5em;
+		margin-top: -1em;
 	}
 	.modal-content-wrapper {
 		left: 0;

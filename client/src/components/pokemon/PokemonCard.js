@@ -49,7 +49,7 @@ function PokemonCard(props) {
 	const [pokemonIndex, setPokemonIndex] = useState("");
 	const [pokemon, setPokemon] = useState([]);
 	const { db, useReturn, userID } = useEasybase();
-	const [pokemonTeam, setPokemonTeam] = useState([]);
+
 	const [imageLoading, setImageLoading] = useState(true);
 	const [tooManyRequests, setTooManyRequests] = useState(false);
 	const [type, setType] = useState("");
@@ -68,7 +68,7 @@ function PokemonCard(props) {
 		setName(props.name);
 		setPokemonIndex(props.url.split("/")[6]);
 		setImageUrl(pokeImgURL);
-		setPokemonTeam(pokemonTeam);
+
 		axios.get(pokemonUrl).then((res) => {
 			setType(res.data.types[0].type.name);
 			setHp(res.data.stats[0].base_stat);
@@ -78,13 +78,12 @@ function PokemonCard(props) {
 			setSpecialDefense(res.data.stats[4].base_stat);
 			setSpeed(res.data.stats[5].base_stat);
 		});
-	}, [props.name, props.url, pokemonUrl, pokeImgURL, pokemonTeam]);
+	}, [props.name, props.url, pokemonUrl, pokeImgURL]);
 
 	const addToTeam = async () => {
 		if (frame.length >= 6) {
 			alert("Your team is full!");
 		} else {
-			setPokemonTeam([...pokemonTeam, pokemon]);
 			await db("POKEMON", true)
 				.insert({
 					Id: pokemonIndex,
@@ -151,7 +150,9 @@ function PokemonCard(props) {
 			<button
 				className="addPokemonBtn"
 				value={name}
-				onMouseOver={(e) => setPokemon(e.target.value)}
+				onMouseOver={(e) => {
+					setPokemon(e.target.value);
+				}}
 				onClick={() => addToTeam(pokemon)}
 			>
 				Add to Team

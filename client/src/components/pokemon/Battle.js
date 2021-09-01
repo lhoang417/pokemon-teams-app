@@ -79,7 +79,23 @@ function Battle() {
 	function handleBattle() {
 		let yourStats = 0;
 		let oppStats = 0;
+		let automatic = 0;
+		function isSameVal(el, index, arr) {
+			// Return true for the first element
+			if (index === 0) {
+				return true;
+			} else {
+				// Compare the value of the previous element
+				return el.name === arr[index - 1].name;
+			}
+		}
+
 		for (let i = 0; i < frame.length; i++) {
+			if (frame.every(isSameVal)) {
+				automatic = 1;
+			} else {
+				automatic = 0;
+			}
 			yourStats += frame[i].hp;
 			yourStats += frame[i].attack;
 			yourStats += frame[i].defense;
@@ -98,12 +114,13 @@ function Battle() {
 			setOppDispStats(oppStats);
 		}
 		if (
-			yourStats === 200 ||
-			yourStats === 400 ||
-			yourStats === 600 ||
-			yourStats === 800 ||
-			yourStats === 1000 ||
-			yourStats === 1200
+			// yourStats === 200 ||
+			// yourStats === 400 ||
+			// yourStats === 600 ||
+			// yourStats === 800 ||
+			// yourStats === 1000 ||
+			// yourStats === 1200 ||
+			automatic === 1
 		) {
 			setLoser(opp);
 			setYourDispStats("too Strong!");
@@ -150,7 +167,7 @@ function Battle() {
 					<h2 className="text-center ">Choose your opponent!</h2>
 				</div>
 				<div className="row">
-					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv">
+					<div className="col-lg-6 col-md-12 col-sm-12 battleDiv ">
 						<button
 							onMouseOver={() => {
 								setStats(ashTeam);
@@ -164,6 +181,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Ash Ketchum
 							</h1>
+							<h2>Pokemon Champion</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -189,6 +207,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Brock
 							</h1>
+							<h2>Pewter City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -214,6 +233,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Misty
 							</h1>
+							<h2>Cerulean City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -239,6 +259,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Lt. Surge
 							</h1>
+							<h2>Vermillion City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -264,6 +285,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Erika
 							</h1>
+							<h2>Celadon City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -289,6 +311,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Koga
 							</h1>
+							<h2>Fuchsia City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -314,6 +337,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Sabrina
 							</h1>
+							<h2>Saffron City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -339,6 +363,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Blaine
 							</h1>
+							<h2>Cinnabar Island</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -364,6 +389,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Giovanni
 							</h1>
+							<h2>Viridian City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
