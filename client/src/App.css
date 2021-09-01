@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:wght@700&display=swap&effect=shadow-multiple|fire-animation|anaglyph|3d-float|3d");
 
 html::-webkit-scrollbar {
-	width: 1.2vw;
+	width: 1.1vw;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -783,24 +783,26 @@ h2 {
 
 .userInfo {
 	position: fixed;
+	justify-content: end;
 	display: flex;
 	flex-direction: column;
 	width: 5em;
 	top: 0.5vh;
 	margin: 0;
 	right: 0.5vw;
-	z-index: 10000;
+	z-index: 1000;
 }
 .userInfo h5 {
 	position: absolute;
-	left: -55%;
+	right: 0.5vw;
+	/* left: -30%; */
 	width: fit-content;
 	margin-bottom: -0.2em;
 	background: linear-gradient(130deg, blue, red);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-transform: uppercase;
-	margin-left: -1em;
+	/* margin-left: -1em; */
 	text-align: center;
 	font-weight: 900;
 }
@@ -809,6 +811,7 @@ h2 {
 	position: absolute;
 	transform: scale(0.5);
 	right: -15%;
+	top: 2.5vh;
 	border-radius: 7px;
 	transition: 500ms;
 	opacity: 0.5;

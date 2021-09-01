@@ -16,8 +16,8 @@ function Battle() {
 	const [giovanniTeam, setGiovanniTeam] = useState([]);
 	const [ashTeam, setAshTeam] = useState([]);
 	const [open, setOpen] = useState(false);
-	const [winner, setWinner] = useState("winner");
-	const [loser, setLoser] = useState("loser");
+	const [winner, setWinner] = useState("");
+	const [loser, setLoser] = useState("");
 	const [stats, setStats] = useState([]);
 	const [opp, setOpp] = useState("");
 	const [yourDispStats, setYourDispStats] = useState(0);
@@ -97,12 +97,38 @@ function Battle() {
 			oppStats += stats[i].speed;
 			setOppDispStats(oppStats);
 		}
-		if (yourStats > oppStats) {
+		if (
+			yourStats === 200 ||
+			yourStats === 400 ||
+			yourStats === 600 ||
+			yourStats === 800 ||
+			yourStats === 1000 ||
+			yourStats === 1200
+		) {
 			setLoser(opp);
-			setWinner(userID());
+			setYourDispStats("too Strong!");
+			setWinner("MagiKarp FTW!");
+			setOpen(true);
+		} else if (yourStats > oppStats) {
+			setLoser(opp);
+			setWinner(
+				userID()
+					.match(/^(.+)@/)[1]
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 			setOpen(true);
 		} else if (yourStats < oppStats) {
-			setLoser(userID());
+			setLoser(
+				userID()
+					.match(/^(.+)@/)[1]
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 			setWinner(opp);
 			setOpen(true);
 		} else {
@@ -410,7 +436,13 @@ function Battle() {
 									className="modal-content"
 								>
 									<h5>
-										{userID()}'s Battle Level:
+										{userID()
+											.match(/^(.+)@/)[1]
+											.toLowerCase()
+											.split(" ")
+											.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+											.join(" ")}
+										's Battle Level:
 										<span className="font-effect-3d-float">
 											&nbsp;{yourDispStats}
 										</span>
@@ -461,7 +493,7 @@ function Battle() {
 											opacity: 0,
 										}}
 									>
-										was defeated by{" "}
+										was defeated by
 									</motion.h4>
 									<br />
 									<motion.h1

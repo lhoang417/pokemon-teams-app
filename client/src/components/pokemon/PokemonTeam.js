@@ -3,8 +3,6 @@ import { useEasybase } from "easybase-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// import { useEffect, useState } from "react";
-// import PokemonCard from "./PokemonCard";
 const TYPE_COLORS = {
 	bug: "linear-gradient(black, #B1C12E)",
 	dark: "linear-gradient(black, #4F3A2D)",
@@ -41,17 +39,9 @@ const StyledLink = styled(Link)`
 `;
 
 function PokemonTeam() {
-	// const [easybaseData, setEasybaseData] = useState([]);
 	const { db, useReturn } = useEasybase();
 	const [nameToDelete, setNameToDelete] = useState("");
-
-	// const {mounted} = async () => {
 	const { frame } = useReturn(() => db("POKEMON", true).return().limit(6), []);
-	// setEasybaseData(ebData);
-
-	// useEffect(() => {
-	// 	mounted();
-	// });
 	const handleDelete = async (e) => {
 		await db("POKEMON", true).delete().where({ name: nameToDelete }).one();
 	};
@@ -89,29 +79,12 @@ function PokemonTeam() {
 												.join(" ")}
 										</h6>
 									</div>
-
-									{/* <div className="baseStatsDiv">
-							<h1>BASE STATS</h1>
-							<h2>HP: {ele.hp}</h2>
-							<h2>Attack: {ele.attack}</h2>
-							<h2>Defense: {ele.defense}</h2>
-							<h2>Special Attack: {ele.specialattack}</h2>
-							<h2>Special Defense: {ele.specialdefense}</h2>
-							<h2>Speed: {ele.speed}</h2>
-							<h1>TYPE </h1>
-							<br />
-							<h2 style={{ marginTop: "-1em" }}>
-								{ele.type.replace(/"/g, "").toUpperCase()}
-							</h2>
-						</div> */}
 								</div>
 							</StyledLink>
-
 							<button
 								className="deleteBtn"
-								onMouseOver={(e) => {
+								onMouseOver={() => {
 									setNameToDelete(ele.name);
-									console.log(nameToDelete);
 								}}
 								onClick={(e) => handleDelete(e.target.value)}
 							>

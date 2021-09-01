@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-// import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 
 const Sprite = styled.img`
@@ -41,7 +40,6 @@ function Pokemon(props) {
 	const [speed, setSpeed] = useState([]);
 	const [imageUrl, setImageUrl] = useState("");
 	const [type, setType] = useState("");
-	// const [pokemonTeam, setPokemonTeam] = useState([]);
 
 	useEffect(() => {
 		const { pokemonIndex } = props.match.params;
@@ -61,27 +59,7 @@ function Pokemon(props) {
 			setSpeed(res.data.stats[5].base_stat);
 		});
 	}, [pokemonIndex, props.match.params]);
-	// const addToTeam = () => {
-	// 	if (pokemonTeam.length >= 6) {
-	// 		alert("Your party is full!");
-	// 	} else {
-	// 		const team = pokemonTeam.concat({
-	// 			Id: uuidv4(),
-	// 			Name: name,
-	// 			Hp: hp,
-	// 			Attack: attack,
-	// 			Defense: defense,
-	// 			SpecialAttack: specialAttack,
-	// 			SpecialDefense: specialDefense,
-	// 			Speed: speed,
-	// 			Type: type,
-	// 			Image: imageUrl,
-	// 		});
-	// 		console.log(team);
 
-	// 		setPokemonTeam(team);
-	// 	}
-	// };
 	return (
 		<>
 			<div

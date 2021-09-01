@@ -59,10 +59,9 @@ function PokemonCard(props) {
 	const [specialAttack, setSpecialAttack] = useState([]);
 	const [specialDefense, setSpecialDefense] = useState([]);
 	const [speed, setSpeed] = useState([]);
-	const { frame } = useReturn(() => db("POKEMON", true).return().limit(10), []);
+	const { frame } = useReturn(() => db("POKEMON", true).return(), []);
 
 	const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
-	// const pokeImgURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
 	const pokeImgURL = `https://raw.githubusercontent.com/lhoang417/pokemon-teams-app/main/client/src/components/pokemon/images/${pokemonIndex}.png?raw=true`;
 
 	useEffect(() => {
@@ -106,7 +105,6 @@ function PokemonCard(props) {
 
 	return (
 		<div>
-			{/* <button onClick={() => console.log(frame)}>push</button> */}
 			<StyledLink to={`pokemon/${pokemonIndex}`}>
 				<div
 					className="card"
