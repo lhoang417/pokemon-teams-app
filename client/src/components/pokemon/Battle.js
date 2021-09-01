@@ -181,7 +181,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Ash Ketchum
 							</h1>
-							<h2>Pokemon Champion</h2>
+							<h2 className="font-effect-anaglyph">Pokemon Champion</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -207,7 +207,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Brock
 							</h1>
-							<h2>Pewter City</h2>
+							<h2 className="font-effect-anaglyph">Pewter City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -233,7 +233,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Misty
 							</h1>
-							<h2>Cerulean City</h2>
+							<h2 className="font-effect-anaglyph">Cerulean City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -259,7 +259,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Lt. Surge
 							</h1>
-							<h2>Vermillion City</h2>
+							<h2 className="font-effect-anaglyph">Vermillion City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -285,7 +285,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Erika
 							</h1>
-							<h2>Celadon City</h2>
+							<h2 className="font-effect-anaglyph">Celadon City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -311,7 +311,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Koga
 							</h1>
-							<h2>Fuchsia City</h2>
+							<h2 className="font-effect-anaglyph">Fuchsia City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -337,7 +337,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Sabrina
 							</h1>
-							<h2>Saffron City</h2>
+							<h2 className="font-effect-anaglyph">Saffron City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -363,7 +363,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Blaine
 							</h1>
-							<h2>Cinnabar Island</h2>
+							<h2 className="font-effect-anaglyph">Cinnabar Island</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
@@ -389,7 +389,7 @@ function Battle() {
 							<h1 className="card-header text-center font-effect-anaglyph">
 								Giovanni
 							</h1>
-							<h2>Viridian City</h2>
+							<h2 className="font-effect-anaglyph">Viridian City</h2>
 							<div className="span2">
 								<h2>Team:</h2>
 								<div className="divInDiv2">
