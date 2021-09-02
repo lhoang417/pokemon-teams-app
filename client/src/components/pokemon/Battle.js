@@ -95,7 +95,13 @@ function Battle() {
 		if (automatic === 1 && oppAuto === 1) {
 			setYourDispStats("MAGIKARP!!");
 			setOppDispStats("MAGIKARP!!");
-			setLoser(opp);
+			setLoser(
+				opp
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 			setWinner(
 				userID()
 					.match(/^(.+)@/)[1]
@@ -107,16 +113,28 @@ function Battle() {
 			setAftermath("tied with");
 			setOpen(true);
 		} else if (automatic === 1 && oppAuto === 0) {
-			setLoser(opp);
+			setLoser(
+				opp
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 			setYourDispStats("over 9,000!!");
 			setWinner("Magikarp FTW!");
 			setOpen(true);
-		} else if (oppAuto === 1 && automatic === 0) {
-			setLoser("Your team");
-			setWinner("MAGIKARP");
-			setOpen(true);
+			// } else if (oppAuto === 1 && automatic === 0) {
+			// 	setLoser("Your team");
+			// 	setWinner("MAGIKARP");
+			// 	setOpen(true);
 		} else if (yourStats > oppStats) {
-			setLoser(opp);
+			setLoser(
+				opp
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 			setWinner(
 				userID()
 					.match(/^(.+)@/)[1]
@@ -135,7 +153,13 @@ function Battle() {
 					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
 					.join(" ")
 			);
-			setWinner(opp);
+			setWinner(
+				opp
+					.toLowerCase()
+					.split(" ")
+					.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+					.join(" ")
+			);
 
 			setOpen(true);
 		}
@@ -156,7 +180,13 @@ function Battle() {
 							<button
 								onMouseOver={() => {
 									setStats(_.where(frame, { gymleader: e }));
-									setOpp(e);
+									setOpp(
+										e
+											.toLowerCase()
+											.split(" ")
+											.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+											.join(" ")
+									);
 								}}
 								onClick={handleBattle}
 								className="battleBtn"
@@ -174,7 +204,11 @@ function Battle() {
 									<div className="divInDiv2">
 										{_.where(frame, { gymleader: e }).map((ele, i) => (
 											<div key={i}>
-												<img src={pokeball} alt="" style={{ width: "30%" }} />
+												<img
+													src={pokeball}
+													alt=""
+													style={{ width: "30px", height: "30px" }}
+												/>
 												<h3>{ele.name}</h3>
 											</div>
 										))}

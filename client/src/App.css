@@ -185,14 +185,14 @@ nav a:hover {
 
 .divInDiv2 {
 	display: flex;
-	padding-left: 1em;
+	padding-right: 1em;
 	padding-top: 0.3em;
-	width: 100%;
+	width: 25em;
 }
 
 .divInDiv2 h3 {
 	color: white;
-	padding: 0.1em;
+	padding: 0.5em;
 	font-size: 0.7em;
 }
 
@@ -983,6 +983,13 @@ h2 {
 	}
 }
 @media screen and (max-width: 575px) {
+	.navbar {
+		flex-direction: column;
+	}
+	.divInDiv2 {
+		width: 20em;
+		margin: auto;
+	}
 	.welcome h1 {
 		font-size: 1.3em;
 	}
@@ -1011,12 +1018,15 @@ h2 {
 	.navbar {
 		flex-direction: column;
 	}
-	/* .toChatRoom {
-		top: 5vh;
-	} */
+	.divInDiv2 h3 {
+		font-size: 0.55em;
+	}
 	.modal-content {
-		margin-left: -1.5em;
+		margin-left: -1.2em;
 		margin-top: -1em;
+	}
+	.winner {
+		font-size: 1.8em;
 	}
 	.baseStatsDiv {
 		margin-top: -1em;
@@ -1024,7 +1034,7 @@ h2 {
 	}
 	.homeDiv {
 		transform: scale(0.8);
-		margin-top: -5em;
+		margin-top: -2em;
 	}
 	.resultsDiv {
 		font-size: 1em;
