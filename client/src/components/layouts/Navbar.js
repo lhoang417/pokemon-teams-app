@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Navbar() {
 	return (
 		<div className="mb-3 navDiv">
@@ -13,6 +13,12 @@ function Navbar() {
 				>
 					Dashboard
 				</a>
+				<Link
+					className="navbar-brand col-sm-4 col-md-2 mr-0 align-items-center"
+					to="/chatroom"
+				>
+					CHATROOM
+				</Link>
 			</nav>
 		</div>
 	);

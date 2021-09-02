@@ -67,6 +67,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Pokemon from "./components/pokemon/Pokemon";
 import Home from "./components/layouts/Home";
 import Battle from "./components/pokemon/Battle";
+import Chatroom from "./components/pokemon/Chatroom";
 
 const SignOutButton = () => {
 	const { signOut, userID } = useEasybase();
@@ -99,6 +100,7 @@ function App() {
 								/>
 								<Route exact path="/PokemonTeam" component={PokemonTeam} />
 								<Route exact path="/battle" component={Battle} />
+								<Route exact path="/chatroom" component={Chatroom} />
 							</Switch>
 						</div>
 					</div>

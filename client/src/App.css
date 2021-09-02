@@ -18,6 +18,25 @@ nav {
 	background-color: black;
 	box-shadow: -0.1rem 0.5rem 0.7rem;
 }
+
+/* .toChatRoom {
+	text-decoration: none;
+	position: fixed;
+	top: 7.2vh;
+	right: 1.5vw;
+	z-index: 1000;
+	color: white;
+	background: linear-gradient(130deg, red, blue);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border-radius: 12px;
+	transition: 300ms;
+	font-weight: 900;
+} */
+/* .toChatRoom:hover {
+	transform: scale(1.1);
+} */
+
 * {
 	user-select: none;
 	font-family: "Poppins", sans-serif;
@@ -97,10 +116,11 @@ nav a:hover {
 
 .searchInput {
 	position: fixed;
-	width: 15vw;
-	top: 1vh;
+	width: 20vw;
+	height: 3vh;
+	top: 0.5vh;
 	z-index: 10000;
-	background: linear-gradient(transparent, black);
+	background: linear-gradient(rgb(47, 47, 47), transparent, rgb(47, 47, 47));
 	padding-left: 0.5rem;
 	border: 3px rgb(black);
 	border-radius: 7px;
@@ -135,7 +155,8 @@ nav a:hover {
 
 .span {
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
+	width: 17em;
 	opacity: 0.2;
 	transition: 750ms;
 	box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 255, 255),
@@ -189,11 +210,12 @@ nav a:hover {
 	position: relative;
 	border: 2px rgb(black);
 	border-radius: 7px;
-	margin: auto;
-	margin-top: -3.2em;
+	margin-top: 0.3em;
 	opacity: 0.5;
-	font-size: 0.5em;
+	font-size: 1em;
 	font-style: italic;
+	width: 50%;
+	left: 25%;
 }
 
 .addPokemonBtn:hover {
@@ -863,12 +885,11 @@ h2 {
 		display: flex;
 		justify-content: center;
 		border: 2px rgb(black);
-		padding: 1em 1rem 1rem 1em;
+		/* padding: 1em 1rem 1rem 1em; */
 		border-radius: 7px;
 		position: fixed;
-		bottom: 3vh;
-		width: 100%;
-		transform: scale(0.4);
+		bottom: 5vh;
+		left: 2%;
 		opacity: 0.2;
 		transition: 750ms;
 		box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -929,6 +950,7 @@ h2 {
 	.container {
 		display: flex;
 		flex-direction: column;
+		margin-top: 2em;
 	}
 	.pokeDiv {
 		display: flex;
@@ -949,9 +971,6 @@ h2 {
 	}
 	.baseStatsDiv {
 		margin-top: 6em;
-	}
-	.addPokemonBtn {
-		margin-top: -4.5em;
 	}
 	.searchInput {
 		margin-right: 1rem;
@@ -989,6 +1008,12 @@ h2 {
 }
 
 @media screen and (max-width: 400px) {
+	.navbar {
+		flex-direction: column;
+	}
+	/* .toChatRoom {
+		top: 5vh;
+	} */
 	.modal-content {
 		margin-left: -1.5em;
 		margin-top: -1em;
@@ -1022,6 +1047,7 @@ h2 {
 	}
 	.card {
 		margin-bottom: 0.5em;
+		margin-top: 2em;
 	}
 	.welcome span {
 		color: white;

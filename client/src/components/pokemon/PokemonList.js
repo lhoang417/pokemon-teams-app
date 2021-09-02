@@ -47,7 +47,11 @@ function PokemonList() {
 						<div className="divInDiv">
 							{frame.map((ele, i) => (
 								<div key={i}>
-									<img src={pokeball} alt="" style={{ width: "80%" }} />
+									<img
+										src={pokeball}
+										alt=""
+										style={{ width: "25px", height: "25px" }}
+									/>
 								</div>
 							))}
 						</div>
