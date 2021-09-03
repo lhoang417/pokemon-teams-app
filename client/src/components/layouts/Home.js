@@ -57,7 +57,7 @@ function Home() {
 					Welcome to Pokemon Teams!
 					<br />
 					Select your team with the link below... <br />
-					FINALLY BATTLE THE GYM LEADERS!
+					FINALLY BATTLE SOMEONE!
 					<br />
 				</h1>
 				<div className="homeLinkDiv">

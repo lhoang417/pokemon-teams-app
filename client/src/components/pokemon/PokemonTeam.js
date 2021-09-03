@@ -59,7 +59,7 @@ function PokemonTeam() {
 					{frame.map((ele, i) => (
 						<div
 							key={i}
-							className="card card2 col-lg-3 col-md-4 col-sm-6 mt-3"
+							className="card card2 col-lg-3 col-md-4 col-sm-6"
 							style={{ background: TYPE_COLORS[ele.type.replace(/"/g, "")] }}
 						>
 							<StyledLink to={`pokemon/${ele.id}`}>
