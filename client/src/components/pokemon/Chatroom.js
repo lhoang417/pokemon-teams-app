@@ -80,7 +80,7 @@ function Chatroom() {
 			</div>
 			<div id="ChatWindow__newMessageContainer">
 				<input
-					placeholder="no capitals or punctuations"
+					placeholder="Say somethin...no apostrophes"
 					onKeyPress={createMessage}
 					onChange={(e) => {
 						setMessage(e.target.value);
