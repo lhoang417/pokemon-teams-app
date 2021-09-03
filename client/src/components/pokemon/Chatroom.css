@@ -96,16 +96,19 @@ input {
 		margin-top: 2em;
 	}
 	.msgDiv h3 {
-		font-size: 1em;
+		font-size: 0.5em;
 	}
 	.messageDeleteBtn {
-		transform: scale(0.4);
-		margin-top: -0.35em;
+		transform: scale(0.3);
+		margin-top: -0.7em;
 	}
 	.chatroomLinks {
 		flex-direction: row;
 		margin-top: -0.5em;
 		padding-bottom: 2em;
 		justify-content: space-between;
+	}
+	input {
+		font-size: 0.75em;
 	}
 }

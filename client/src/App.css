@@ -1116,6 +1116,10 @@ h2 {
 		width: 110vw;
 		margin-left: -3.5em;
 	}
+	.upDiv {
+		margin-right: 0.5em;
+		padding-left: 0.1em;
+	}
 }
 
 .cTfAuX {
@@ -1124,13 +1128,19 @@ h2 {
 
 .gzrYKy {
 	height: 40px !important;
+	border: none !important;
 }
 .iThxgW {
 	margin-top: 0.2em;
+	border: none !important;
 	color: black;
+	overflow: hidden !important;
+	width: 98% !important;
+	margin-left: 0.2em;
 }
 .eACHUM {
 	color: lightgray !important;
+	padding: 0 !important;
 }
 
 .emHZcR {
@@ -1142,6 +1152,7 @@ h2 {
 
 .jnwwYn {
 	background: linear-gradient(135deg, red, black);
+	border-radius: 0px !important;
 }
 .jnwwYn h1 {
 	color: white;
@@ -1162,8 +1173,7 @@ h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	border-radius: none !important;
 	background: linear-gradient(135deg, black, red);
 	height: 100vh;
-	overflow: hidden;
 }
