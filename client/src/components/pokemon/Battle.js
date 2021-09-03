@@ -42,7 +42,7 @@ function Battle() {
 			return true;
 		} else {
 			// Compare the value of the previous element
-			return el.name === arr[index - 1].name && el.name === "magikarp";
+			return el.name === arr[index - 1].name;
 		}
 	}
 
@@ -65,7 +65,7 @@ function Battle() {
 		let oppAuto = 0;
 
 		for (let i = 0; i < yourTeam.length; i++) {
-			if (yourTeam.every(isSameVal)) {
+			if (yourTeam[0].name === "magikarp" && yourTeam.every(isSameVal)) {
 				automatic = 1;
 			} else {
 				automatic = 0;
@@ -79,7 +79,7 @@ function Battle() {
 			setYourDispStats(yourStats);
 		}
 		for (let i = 0; i < stats.length; i++) {
-			if (stats.every(isSameVal)) {
+			if (stats[0].name === "magikarp" && stats.every(isSameVal)) {
 				oppAuto = 1;
 			} else {
 				oppAuto = 0;
@@ -123,10 +123,10 @@ function Battle() {
 			setYourDispStats("over 9,000!!");
 			setWinner("Magikarp FTW!");
 			setOpen(true);
-			// } else if (oppAuto === 1 && automatic === 0) {
-			// 	setLoser("Your team");
-			// 	setWinner("MAGIKARP");
-			// 	setOpen(true);
+		} else if (oppAuto === 1 && automatic === 0) {
+			setLoser("Your team");
+			setWinner("MAGIKARP");
+			setOpen(true);
 		} else if (yourStats > oppStats) {
 			setLoser(
 				opp
