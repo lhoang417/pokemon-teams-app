@@ -107,8 +107,9 @@ input {
 	#ChatWindow__container {
 		margin-top: 2em;
 	}
-	.msgDiv h3 {
-		font-size: 0.5em;
+	.msgDiv h2,
+	h3 {
+		font-size: 0.7em;
 	}
 	.messageDeleteBtn {
 		transform: scale(0.3);
