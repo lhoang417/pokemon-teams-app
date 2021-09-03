@@ -38,13 +38,13 @@ function Chatroom() {
 		<div id="ChatWindow__container">
 			<div className="chatroomLinks">
 				<Link className="backtoBattle" to={`/battle`}>
-					{"<"}Battle
+					BattlePage
 				</Link>
 				<Link className="backtoBattle" to={"/PokemonTeam"}>
-					{"<"}Team
+					TeamPage
 				</Link>
 				<Link className="backtoBattle" to="/Dashboard">
-					{"<"}PokemonList
+					PokemonList
 				</Link>
 			</div>
 			<h1 className="text-center font-effect-fire-animation">

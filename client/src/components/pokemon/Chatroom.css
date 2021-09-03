@@ -81,14 +81,26 @@ input {
 .backtoBattle {
 	text-decoration: none;
 	color: white;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 0.5em;
+	border-radius: 12px;
+	transition: 100ms;
 }
 .backtoBattle:hover {
 	color: gold;
+	background: rgba(0, 0, 0, 0.5);
 }
-.chatroomLinks {
+/* .chatroomLinks {
 	display: flex;
 	justify-content: space-between;
 	padding-bottom: 2em;
+} */
+.chatroomLinks {
+	display: flex;
+	flex-direction: row;
+	margin-top: -0.5em;
+	padding-bottom: 2em;
+	justify-content: space-evenly;
 }
 
 @media screen and (max-width: 400px) {
@@ -102,12 +114,7 @@ input {
 		transform: scale(0.3);
 		margin-top: -0.7em;
 	}
-	.chatroomLinks {
-		flex-direction: row;
-		margin-top: -0.5em;
-		padding-bottom: 2em;
-		justify-content: space-between;
-	}
+
 	input {
 		font-size: 0.75em;
 	}
